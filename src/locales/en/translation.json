@@ -1,0 +1,232 @@
+{
+  "meta": {
+    "siteName": "Sweet Bonihu",
+    "home": {
+      "title": "Sweet Bonihu | Luxury Wellness B&B in Bruges",
+      "description": "Discover ultimate relaxation in our luxury wellness suites with private jacuzzi and sauna in the heart of Bruges. Book your romantic escape now."
+    },
+    "loft": {
+      "title": "The Loft | Luxury Wellness Suite with Jacuzzi | Sweet Bonihu",
+      "description": "Enjoy our exclusive Loft suite with private jacuzzi, infrared sauna and king-size bed. The perfect romantic escape in Bruges."
+    },
+    "midsomer": {
+      "title": "Midsomer | Cozy Room | Sweet Bonihu",
+      "description": "Stay in our cozy Midsomer room with authentic charm and modern comfort. Pets welcome in Bruges."
+    },
+    "romantic": {
+      "title": "Romantic Package | Exclusive Arrangement | Sweet Bonihu",
+      "description": "Surprise your partner with our romantic package: champagne, flowers, chocolate and unlimited wellness. Book your dream stay now."
+    },
+    "contact": {
+      "title": "Contact | Sweet Bonihu Bruges",
+      "description": "Contact Sweet Bonihu for reservations or questions. We are happy to help you plan your perfect stay in Bruges."
+    },
+    "blog": {
+      "title": "Blog | Sweet Bonihu",
+      "description": "Discover tips about Bruges, wellness and news from Sweet Bonihu. Inspiration for your perfect stay."
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "theLoft": "The Loft",
+    "midsomer": "Midsomer",
+    "romanticPackage": "Romantic Package",
+    "blog": "Blog",
+    "contact": "Contact",
+    "bookNow": "Book Now"
+  },
+  "hero": {
+    "subtitle": "Wellness & Lodging in Bruges",
+    "title": "Sweet Bonihu",
+    "description": "Discover ultimate relaxation in our luxury wellness suites, located in the romantic heart of Bruges. A place where tranquility and refinement come together.",
+    "cta": "Reserve Now",
+    "viewRooms": "View Rooms",
+    "rating": "Excellent",
+    "ratingCount": "guest reviews"
+  },
+  "about": {
+    "subtitle": "Welcome",
+    "title": "An Oasis of Tranquility",
+    "description": "Sweet Bonihu offers a unique combination of Flemish hospitality and contemporary comfort. Our wellness suites are carefully designed to provide you with an unforgettable experience.",
+    "descriptionSecond": "Located within walking distance of the historic center of Bruges, our boutique B&B is the perfect base for both romantic weekends and relaxation trips.",
+    "features": {
+      "wellness": {
+        "title": "Private Wellness",
+        "description": "Enjoy your own jacuzzi and sauna, whenever you want."
+      },
+      "location": {
+        "title": "Perfect Location",
+        "description": "Walking distance from all the sights of Bruges."
+      },
+      "breakfast": {
+        "title": "Extensive Breakfast",
+        "description": "Start your day with a rich and freshly prepared breakfast."
+      }
+    }
+  },
+  "rooms": {
+    "subtitle": "Our Rooms",
+    "title": "Luxury Accommodations",
+    "loft": {
+      "name": "The Loft",
+      "subtitle": "Luxury Wellness Suite",
+      "description": "Our gem on the second floor with private jacuzzi, infrared sauna and a breathtaking view. Perfect for a romantic escape.",
+      "features": [
+        "Private Jacuzzi",
+        "Infrared Sauna",
+        "King-size Bed"
+      ],
+      "heroSubtitle": "Luxury Wellness Suite",
+      "heroTitle": "The Loft",
+      "contentTitle": "An Exceptional Experience",
+      "contentDescription": "\"The Loft\" is our gem, located on the second floor in romantic Bruges. This exceptional suite is equipped with a private jacuzzi and infrared sauna that you can enjoy unlimited.",
+      "contentDescriptionSecond": "Perfect for a romantic weekend, a honeymoon or simply to escape the daily hustle. Immerse yourself in luxury and relax in an atmospheric environment.",
+      "reserveButton": "Reserve The Loft",
+      "amenitiesTitle": "Amenities",
+      "amenities": [
+        "Private jacuzzi (unlimited use)",
+        "Infrared sauna",
+        "King-size bed with premium bedding",
+        "Extensive breakfast included",
+        "Air conditioning",
+        "Free WiFi",
+        "Coffee and tea facilities",
+        "Bathroom with rain shower"
+      ]
+    },
+    "midsomer": {
+      "name": "Midsomer",
+      "subtitle": "Cozy Room",
+      "description": "A cozy room with authentic charm and modern comfort. Ideal for guests seeking peace and coziness.",
+      "features": [
+        "Authentic Interior",
+        "Modern Comfort",
+        "Pets Welcome"
+      ],
+      "heroSubtitle": "Cozy Room",
+      "heroTitle": "Midsomer",
+      "contentTitle": "Authentic Charm",
+      "contentDescription": "\"Midsomer\" is our cozy room where authentic Bruges charm and modern comfort come together. The warm atmosphere and carefully chosen details make your stay extra special.",
+      "contentDescriptionSecond": "This room is perfect for guests looking for a peaceful, homely atmosphere combined with all modern conveniences. Pets are very welcome here.",
+      "petsWelcome": "Pets Welcome",
+      "petsDescription": "At Midsomer, your four-legged friends are very welcome. We ensure a comfortable stay for the whole family.",
+      "reserveButton": "Reserve Midsomer",
+      "amenitiesTitle": "Amenities",
+      "amenities": [
+        "Comfortable double bed",
+        "Extensive breakfast included",
+        "Private bathroom with shower",
+        "Air conditioning",
+        "Free WiFi",
+        "Coffee and tea facilities",
+        "Pet-friendly",
+        "Bicycle storage available"
+      ]
+    },
+    "moreInfo": "More Info"
+  },
+  "romantic": {
+    "heroSubtitle": "Exclusive Arrangement",
+    "heroTitle": "Romantic Package",
+    "contentTitle": "The Perfect Romantic Escape",
+    "contentDescription": "Surprise your partner with an unforgettable experience. Our romantic package combines luxury, wellness and the enchanting atmosphere of Bruges into one unforgettable experience.",
+    "includesTitle": "Included in your stay",
+    "includes": [
+      "Overnight stay in The Loft suite",
+      "Unlimited use of private jacuzzi",
+      "Unlimited use of infrared sauna",
+      "Extensive romantic breakfast",
+      "Bottle of champagne upon arrival",
+      "Fresh flowers in the room",
+      "Chocolate truffles",
+      "Late check-out (upon request)"
+    ],
+    "priceLabel": "Special Rate",
+    "priceValue": "On Request",
+    "priceDescription": "Prices vary depending on the chosen dates and availability. Contact us for a personalized quote.",
+    "requestQuote": "Request Quote"
+  },
+  "testimonials": {
+    "subtitle": "Experiences",
+    "title": "What Our Guests Say",
+    "items": [
+      {
+        "text": "A fantastic experience! The jacuzzi was wonderful and the breakfast delicious. We will definitely be back.",
+        "author": "Sophie & Thomas",
+        "location": "Amsterdam",
+        "rating": "10/10"
+      },
+      {
+        "text": "Perfect location, beautiful room and very friendly hosts. The romantic package was worth every penny.",
+        "author": "Marie & Pierre",
+        "location": "Paris",
+        "rating": "9.5/10"
+      },
+      {
+        "text": "The Loft is truly a gem. Everything was taken care of down to the smallest detail. Absolutely recommended!",
+        "author": "Jan & Lisa",
+        "location": "Antwerp",
+        "rating": "10/10"
+      }
+    ]
+  },
+  "contact": {
+    "heroSubtitle": "Get in Touch",
+    "heroTitle": "Contact",
+    "infoTitle": "Contact Details",
+    "location": {
+      "label": "Location",
+      "value": "Fortuinstraat 79, 8310 Bruges, Belgium"
+    },
+    "findUs": "Find Us",
+    "email": {
+      "label": "Email",
+      "value": "info@sweetbonihu.be"
+    },
+    "checkIn": {
+      "label": "Check-in",
+      "value": "3:00 PM - 8:00 PM"
+    },
+    "checkOut": {
+      "label": "Check-out",
+      "value": "Until 11:00 AM"
+    },
+    "directReserve": "Direct Reservation",
+    "formTitle": "Send us a message",
+    "form": {
+      "name": "Your name",
+      "email": "Email address",
+      "dates": "Preferred dates",
+      "message": "Your message",
+      "messagePlaceholder": "Tell us about your wishes or ask a question...",
+      "submit": "Send Message"
+    }
+  },
+  "footer": {
+    "description": "Luxury wellness B&B in the heart of romantic Bruges. Discover ultimate relaxation.",
+    "navigation": "Navigation",
+    "contactTitle": "Contact",
+    "location": "Fortuinstraat 79, 8310 Bruges",
+    "copyright": "Sweet Bonihu. All rights reserved."
+  },
+  "blog": {
+    "heroSubtitle": "Our Blog",
+    "heroTitle": "Stories & Tips",
+    "heroDescription": "Discover travel guides, wellness tips and the latest news from Sweet Bonihu.",
+    "categories": {
+      "all": "All",
+      "travel": "Travel",
+      "wellness": "Wellness",
+      "news": "News"
+    },
+    "readMore": "Read More",
+    "backToBlog": "Back to Blog",
+    "relatedPosts": "Related Articles",
+    "noResults": "No articles found."
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Oops! Page not found",
+    "backHome": "Back to Home"
+  }
+}

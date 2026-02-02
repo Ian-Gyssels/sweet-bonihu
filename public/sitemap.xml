@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Home -->
+  <url>
+    <loc>https://sweetbonihu.be/</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://sweetbonihu.be/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sweetbonihu.be/en"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://sweetbonihu.be/fr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sweetbonihu.be/"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://sweetbonihu.be/en</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://sweetbonihu.be/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sweetbonihu.be/en"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://sweetbonihu.be/fr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sweetbonihu.be/"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://sweetbonihu.be/fr</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://sweetbonihu.be/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sweetbonihu.be/en"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://sweetbonihu.be/fr"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sweetbonihu.be/"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- De Loft / The Loft / Le Loft -->
+  <url>
+    <loc>https://sweetbonihu.be/de-loft</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://sweetbonihu.be/de-loft"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sweetbonihu.be/en/the-loft"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://sweetbonihu.be/fr/le-loft"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sweetbonihu.be/de-loft"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sweetbonihu.be/en/the-loft</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://sweetbonihu.be/de-loft"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sweetbonihu.be/en/the-loft"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://sweetbonihu.be/fr/le-loft"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sweetbonihu.be/de-loft"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sweetbonihu.be/fr/le-loft</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://sweetbonihu.be/de-loft"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sweetbonihu.be/en/the-loft"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://sweetbonihu.be/fr/le-loft"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sweetbonihu.be/de-loft"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Midsomer -->
+  <url>
+    <loc>https://sweetbonihu.be/midsomer</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://sweetbonihu.be/midsomer"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sweetbonihu.be/en/midsomer"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://sweetbonihu.be/fr/midsomer"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sweetbonihu.be/midsomer"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sweetbonihu.be/en/midsomer</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://sweetbonihu.be/midsomer"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sweetbonihu.be/en/midsomer"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://sweetbonihu.be/fr/midsomer"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sweetbonihu.be/midsomer"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://sweetbonihu.be/fr/midsomer</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://sweetbonihu.be/midsomer"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sweetbonihu.be/en/midsomer"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://sweetbonihu.be/fr/midsomer"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sweetbonihu.be/midsomer"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Romantisch Pakket / Romantic Package / Forfait Romantique -->
+  <url>
+    <loc>https://sweetbonihu.be/romantisch-pakket</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://sweetbonihu.be/romantisch-pakket"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sweetbonihu.be/en/romantic-package"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://sweetbonihu.be/fr/forfait-romantique"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sweetbonihu.be/romantisch-pakket"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sweetbonihu.be/en/romantic-package</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://sweetbonihu.be/romantisch-pakket"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sweetbonihu.be/en/romantic-package"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://sweetbonihu.be/fr/forfait-romantique"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sweetbonihu.be/romantisch-pakket"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sweetbonihu.be/fr/forfait-romantique</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://sweetbonihu.be/romantisch-pakket"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sweetbonihu.be/en/romantic-package"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://sweetbonihu.be/fr/forfait-romantique"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sweetbonihu.be/romantisch-pakket"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Contact -->
+  <url>
+    <loc>https://sweetbonihu.be/contact</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://sweetbonihu.be/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sweetbonihu.be/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://sweetbonihu.be/fr/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sweetbonihu.be/contact"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sweetbonihu.be/en/contact</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://sweetbonihu.be/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sweetbonihu.be/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://sweetbonihu.be/fr/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sweetbonihu.be/contact"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sweetbonihu.be/fr/contact</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://sweetbonihu.be/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://sweetbonihu.be/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://sweetbonihu.be/fr/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://sweetbonihu.be/contact"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+</urlset>

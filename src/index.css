@@ -1,0 +1,182 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+/* Wellness B&B Sweet Bonihu - Quiet Luxury Design System */
+
+@layer base {
+  :root {
+    --background: 40 15% 97%;
+    --foreground: 30 10% 15%;
+
+    --card: 40 20% 99%;
+    --card-foreground: 30 10% 15%;
+
+    --popover: 40 20% 99%;
+    --popover-foreground: 30 10% 15%;
+
+    --primary: 38 35% 55%;
+    --primary-foreground: 40 15% 97%;
+
+    --secondary: 30 8% 35%;
+    --secondary-foreground: 40 15% 97%;
+
+    --muted: 35 15% 92%;
+    --muted-foreground: 30 8% 45%;
+
+    --accent: 38 35% 55%;
+    --accent-foreground: 40 15% 97%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 35 15% 88%;
+    --input: 35 15% 88%;
+    --ring: 38 35% 55%;
+
+    --radius: 0.25rem;
+
+    /* Custom Luxury Tokens */
+    --champagne: 38 35% 55%;
+    --champagne-light: 38 40% 75%;
+    --taupe: 30 8% 35%;
+    --taupe-light: 30 10% 65%;
+    --charcoal: 30 10% 15%;
+    --cream: 40 30% 96%;
+    --ivory: 45 30% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Markdown Editor Styles */
+.markdown-editor-wrapper .w-md-editor {
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    background: hsl(var(--background));
+}
+
+.markdown-editor-wrapper .w-md-editor-toolbar {
+    background: hsl(var(--muted));
+    border-bottom: 1px solid hsl(var(--border));
+}
+
+.markdown-editor-wrapper .w-md-editor-content {
+    background: hsl(var(--background));
+}
+
+.markdown-editor-wrapper .w-md-editor-preview {
+    background: hsl(var(--card));
+}
+
+.markdown-editor-wrapper .wmde-markdown {
+    background: transparent;
+    color: hsl(var(--foreground));
+    font-family: var(--font-sans, "Montserrat", system-ui, sans-serif);
+}
+
+/* Markdown Renderer Styles */
+.markdown-renderer .wmde-markdown {
+    background: transparent;
+    color: hsl(var(--muted-foreground));
+    font-family: var(--font-sans, "Montserrat", system-ui, sans-serif);
+    font-size: 1.125rem;
+    line-height: 1.75;
+}
+
+.markdown-renderer .wmde-markdown h1,
+.markdown-renderer .wmde-markdown h2,
+.markdown-renderer .wmde-markdown h3,
+.markdown-renderer .wmde-markdown h4,
+.markdown-renderer .wmde-markdown h5,
+.markdown-renderer .wmde-markdown h6 {
+    font-family: "Cormorant Garamond", serif;
+    color: hsl(var(--foreground));
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.markdown-renderer .wmde-markdown h2 {
+    font-size: 1.5rem;
+}
+
+.markdown-renderer .wmde-markdown h3 {
+    font-size: 1.25rem;
+}
+
+.markdown-renderer .wmde-markdown p {
+    margin-bottom: 1rem;
+}
+
+.markdown-renderer .wmde-markdown strong {
+    color: hsl(var(--foreground));
+    font-weight: 500;
+}
+
+.markdown-renderer .wmde-markdown a {
+    color: hsl(var(--primary));
+    text-decoration: none;
+}
+
+.markdown-renderer .wmde-markdown a:hover {
+    text-decoration: underline;
+}
+
+.markdown-renderer .wmde-markdown ul {
+    list-style-type: disc;
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+}
+
+.markdown-renderer .wmde-markdown ol {
+    list-style-type: decimal;
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+}
+
+.markdown-renderer .wmde-markdown li {
+    margin-bottom: 0.5rem;
+    display: list-item;
+}
+
+.markdown-renderer .wmde-markdown li::marker {
+    color: hsl(var(--primary));
+}
+
+.markdown-renderer .wmde-markdown blockquote {
+    border-left: 3px solid hsl(var(--primary));
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: hsl(var(--muted-foreground));
+}
+
+.markdown-renderer .wmde-markdown code {
+    background: hsl(var(--muted));
+    padding: 0.125rem 0.375rem;
+    border-radius: 0.25rem;
+    font-size: 0.875em;
+}
+
+.markdown-renderer .wmde-markdown pre {
+    background: hsl(var(--muted));
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+.markdown-renderer .wmde-markdown pre code {
+    background: transparent;
+    padding: 0;
+}

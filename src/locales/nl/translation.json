@@ -1,0 +1,232 @@
+{
+  "meta": {
+    "siteName": "Sweet Bonihu",
+    "home": {
+      "title": "Sweet Bonihu | Luxe Wellness B&B in Brugge",
+      "description": "Ontdek ultieme ontspanning in onze luxe wellness suites met privé jacuzzi en sauna in het hart van Brugge. Boek nu uw romantische escape."
+    },
+    "loft": {
+      "title": "De Loft | Luxe Wellness Suite met Jacuzzi | Sweet Bonihu",
+      "description": "Geniet van onze exclusieve Loft suite met privé jacuzzi, infrarood sauna en king-size bed. De perfecte romantische escape in Brugge."
+    },
+    "midsomer": {
+      "title": "Midsomer | Sfeervolle Kamer | Sweet Bonihu",
+      "description": "Verblijf in onze gezellige Midsomer kamer met authentieke charme en moderne comfort. Huisdieren welkom in Brugge."
+    },
+    "romantic": {
+      "title": "Romantisch Pakket | Exclusief Arrangement | Sweet Bonihu",
+      "description": "Verras uw partner met ons romantisch pakket: champagne, bloemen, chocolade en onbeperkt wellness. Boek nu uw droomverblijf."
+    },
+    "contact": {
+      "title": "Contact | Sweet Bonihu Brugge",
+      "description": "Neem contact op met Sweet Bonihu voor reserveringen of vragen. Wij helpen u graag met het plannen van uw perfecte verblijf in Brugge."
+    },
+    "blog": {
+      "title": "Blog | Sweet Bonihu",
+      "description": "Ontdek tips over Brugge, wellness en nieuws van Sweet Bonihu. Inspiratie voor uw perfecte verblijf."
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "theLoft": "De Loft",
+    "midsomer": "Midsomer",
+    "romanticPackage": "Romantisch Pakket",
+    "blog": "Blog",
+    "contact": "Contact",
+    "bookNow": "Boek Nu"
+  },
+  "hero": {
+    "subtitle": "Wellness & Logies in Brugge",
+    "title": "Sweet Bonihu",
+    "description": "Ontdek ultieme ontspanning in onze luxe wellness suites, gelegen in het romantische hart van Brugge. Een plek waar rust en verfijning samenkomen.",
+    "cta": "Reserveer Nu",
+    "viewRooms": "Bekijk Kamers",
+    "rating": "Voortreffelijk",
+    "ratingCount": "gasten beoordelingen"
+  },
+  "about": {
+    "subtitle": "Welkom",
+    "title": "Een Oase van Rust",
+    "description": "Sweet Bonihu biedt een unieke combinatie van Vlaamse gastvrijheid en hedendaags comfort. Onze wellness suites zijn zorgvuldig ontworpen om u een onvergetelijke ervaring te bieden.",
+    "descriptionSecond": "Gelegen op wandelafstand van het historische centrum van Brugge, is ons boutique B&B de perfecte uitvalsbasis voor zowel romantische weekends als ontspanningsreizen.",
+    "features": {
+      "wellness": {
+        "title": "Privé Wellness",
+        "description": "Geniet van uw eigen jacuzzi en sauna, wanneer u maar wilt."
+      },
+      "location": {
+        "title": "Perfecte Locatie",
+        "description": "Op loopafstand van alle bezienswaardigheden van Brugge."
+      },
+      "breakfast": {
+        "title": "Uitgebreid Ontbijt",
+        "description": "Start uw dag met een rijk en vers bereid ontbijt."
+      }
+    }
+  },
+  "rooms": {
+    "subtitle": "Onze Kamers",
+    "title": "Luxe Verblijven",
+    "loft": {
+      "name": "De Loft",
+      "subtitle": "Luxe Wellness Suite",
+      "description": "Onze parel op de tweede verdieping met privé jacuzzi, infrarood sauna en een adembenemend uitzicht. Perfect voor een romantische escape.",
+      "features": [
+        "Privé Jacuzzi",
+        "Infrarood Sauna",
+        "King-size Bed"
+      ],
+      "heroSubtitle": "Luxe Wellness Suite",
+      "heroTitle": "De Loft",
+      "contentTitle": "Een Uitzonderlijke Beleving",
+      "contentDescription": "\"De Loft\" is onze parel, gelegen op de tweede verdieping in het romantische Brugge. Deze uitzonderlijke suite is uitgerust met een privé jacuzzi en infrarood sauna waar u onbeperkt van kunt genieten.",
+      "contentDescriptionSecond": "Perfect voor een romantisch weekend, een huwelijksreis of gewoon om even te ontsnappen aan de dagelijkse drukte. Laat u onderdompelen in luxe en ontspan in een sfeervolle omgeving.",
+      "reserveButton": "Reserveer De Loft",
+      "amenitiesTitle": "Voorzieningen",
+      "amenities": [
+        "Privé jacuzzi (onbeperkt gebruik)",
+        "Infrarood sauna",
+        "King-size bed met premium beddengoed",
+        "Uitgebreid ontbijt inbegrepen",
+        "Airconditioning",
+        "Gratis WiFi",
+        "Koffie- en theefaciliteiten",
+        "Badkamer met regendouche"
+      ]
+    },
+    "midsomer": {
+      "name": "Midsomer",
+      "subtitle": "Sfeervolle Kamer",
+      "description": "Een gezellige kamer met authentieke charme en moderne comfort. Ideaal voor gasten die rust en gezelligheid zoeken.",
+      "features": [
+        "Authentiek Interieur",
+        "Moderne Comfort",
+        "Huisdieren Welkom"
+      ],
+      "heroSubtitle": "Sfeervolle Kamer",
+      "heroTitle": "Midsomer",
+      "contentTitle": "Authentieke Charme",
+      "contentDescription": "\"Midsomer\" is onze gezellige kamer waar authentieke Brugse charme en modern comfort samenkomen. De warme sfeer en zorgvuldig gekozen details maken uw verblijf extra bijzonder.",
+      "contentDescriptionSecond": "Deze kamer is perfect voor gasten die op zoek zijn naar een rustige, huiselijke sfeer gecombineerd met alle moderne gemakken. Huisdieren zijn hier van harte welkom.",
+      "petsWelcome": "Huisdieren Welkom",
+      "petsDescription": "Bij Midsomer zijn uw viervoeters van harte welkom. We zorgen voor een comfortabel verblijf voor het hele gezin.",
+      "reserveButton": "Reserveer Midsomer",
+      "amenitiesTitle": "Voorzieningen",
+      "amenities": [
+        "Comfortabel tweepersoons bed",
+        "Uitgebreid ontbijt inbegrepen",
+        "Eigen badkamer met douche",
+        "Airconditioning",
+        "Gratis WiFi",
+        "Koffie- en theefaciliteiten",
+        "Huisdiervriendelijk",
+        "Fietsstalling beschikbaar"
+      ]
+    },
+    "moreInfo": "Meer Info"
+  },
+  "romantic": {
+    "heroSubtitle": "Exclusief Arrangement",
+    "heroTitle": "Romantisch Pakket",
+    "contentTitle": "De Perfecte Romantische Escape",
+    "contentDescription": "Verras uw partner met een onvergetelijke ervaring. Ons romantisch pakket combineert luxe, wellness en de betoverende sfeer van Brugge tot één onvergetelijke beleving.",
+    "includesTitle": "Inbegrepen in uw verblijf",
+    "includes": [
+      "Overnachting in De Loft suite",
+      "Onbeperkt gebruik van privé jacuzzi",
+      "Onbeperkt gebruik van infrarood sauna",
+      "Uitgebreid romantisch ontbijt",
+      "Fles champagne bij aankomst",
+      "Verse bloemen op de kamer",
+      "Chocolade truffels",
+      "Late check-out (op aanvraag)"
+    ],
+    "priceLabel": "Speciaal Tarief",
+    "priceValue": "Op Aanvraag",
+    "priceDescription": "Prijzen variëren afhankelijk van de gekozen data en beschikbaarheid. Neem contact met ons op voor een persoonlijke offerte.",
+    "requestQuote": "Vraag Offerte Aan"
+  },
+  "testimonials": {
+    "subtitle": "Ervaringen",
+    "title": "Wat Onze Gasten Zeggen",
+    "items": [
+      {
+        "text": "Een fantastische ervaring! De jacuzzi was heerlijk en het ontbijt overheerlijk. We komen zeker terug.",
+        "author": "Sophie & Thomas",
+        "location": "Amsterdam",
+        "rating": "10/10"
+      },
+      {
+        "text": "Perfecte locatie, prachtige kamer en zeer vriendelijke gastheren. Het romantisch pakket was elke euro waard.",
+        "author": "Marie & Pierre",
+        "location": "Parijs",
+        "rating": "9.5/10"
+      },
+      {
+        "text": "De Loft is werkelijk een pareltje. Alles was tot in de puntjes verzorgd. Absoluut een aanrader!",
+        "author": "Jan & Lisa",
+        "location": "Antwerpen",
+        "rating": "10/10"
+      }
+    ]
+  },
+  "contact": {
+    "heroSubtitle": "Neem Contact Op",
+    "heroTitle": "Contact",
+    "infoTitle": "Contactgegevens",
+    "location": {
+      "label": "Locatie",
+      "value": "Fortuinstraat 79, 8310 Brugge, België"
+    },
+    "findUs": "Vind Ons",
+    "email": {
+      "label": "E-mail",
+      "value": "info@sweetbonihu.be"
+    },
+    "checkIn": {
+      "label": "Check-in",
+      "value": "15:00 - 20:00"
+    },
+    "checkOut": {
+      "label": "Check-out",
+      "value": "Tot 11:00"
+    },
+    "directReserve": "Direct Reserveren",
+    "formTitle": "Stuur ons een bericht",
+    "form": {
+      "name": "Uw naam",
+      "email": "E-mailadres",
+      "dates": "Gewenste data",
+      "message": "Uw bericht",
+      "messagePlaceholder": "Vertel ons over uw wensen of stel een vraag...",
+      "submit": "Verstuur Bericht"
+    }
+  },
+  "footer": {
+    "description": "Luxe wellness B&B in het hart van het romantische Brugge. Ontdek ultieme ontspanning.",
+    "navigation": "Navigatie",
+    "contactTitle": "Contact",
+    "location": "Fortuinstraat 79, 8310 Brugge",
+    "copyright": "Sweet Bonihu. Alle rechten voorbehouden."
+  },
+  "blog": {
+    "heroSubtitle": "Onze Blog",
+    "heroTitle": "Verhalen & Tips",
+    "heroDescription": "Ontdek reisgidsen, wellness tips en het laatste nieuws van Sweet Bonihu.",
+    "categories": {
+      "all": "Alles",
+      "travel": "Reizen",
+      "wellness": "Wellness",
+      "news": "Nieuws"
+    },
+    "readMore": "Lees Meer",
+    "backToBlog": "Terug naar Blog",
+    "relatedPosts": "Gerelateerde Artikelen",
+    "noResults": "Geen artikelen gevonden."
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Oeps! Pagina niet gevonden",
+    "backHome": "Terug naar Home"
+  }
+}
