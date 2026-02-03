@@ -198,6 +198,7 @@
       "email": "E-mailadres",
       "dates": "Gewenste data",
       "message": "Uw bericht",
+      "subject": "Onderwerp",
       "messagePlaceholder": "Vertel ons over uw wensen of stel een vraag...",
       "submit": "Verstuur Bericht"
     }
