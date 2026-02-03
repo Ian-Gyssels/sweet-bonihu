@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { useLanguageSync } from "@/hooks/useLanguageSync";
-import heroImage from "@/assets/hero-wellness.jpg";
+import heroImage from "@/assets/huwlijkspakket_4.jpg";
 
 const RomantischPakket = () => {
   useLanguageSync();
