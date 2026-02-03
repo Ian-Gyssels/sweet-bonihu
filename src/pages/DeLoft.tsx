@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { useLanguageSync } from "@/hooks/useLanguageSync";
-import roomLoft from "@/assets/room-loft.jpg";
+import roomLoft from "@/assets/douche:bad.avif";
 
 const DeLoft = () => {
   useLanguageSync();
@@ -26,7 +26,7 @@ const DeLoft = () => {
         {/* Hero */}
         <section className="relative h-[70vh] overflow-hidden">
           <div 
-            className="absolute inset-0 bg-cover bg-center"
+            className="absolute inset-0 bg-cover bg-center "
             style={{ backgroundImage: `url(${roomLoft})` }}
           >
             <div className="absolute inset-0 bg-charcoal/40" />
