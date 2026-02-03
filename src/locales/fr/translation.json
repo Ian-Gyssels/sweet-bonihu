@@ -198,6 +198,7 @@
       "email": "Adresse e-mail",
       "dates": "Dates souhaitées",
       "message": "Votre message",
+      "subject": "Sujet",
       "messagePlaceholder": "Parlez-nous de vos souhaits ou posez une question...",
       "submit": "Envoyer le Message"
     }
