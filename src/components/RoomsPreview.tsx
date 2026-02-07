@@ -3,8 +3,8 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
 import { useLocalizedPath } from "@/hooks/useLocalizedPath";
-import roomLoft from "@/assets/Douche_Bad_Loft.jpg";
-import roomMidsomer from "@/assets/bed_Recht.jpg";
+import roomLoft from "@/assets/hero-loft.jpg";
+import roomMidsomer from "@/assets/hero-wellness.jpg";
 
 const RoomsPreview = () => {
   const { t } = useTranslation();
