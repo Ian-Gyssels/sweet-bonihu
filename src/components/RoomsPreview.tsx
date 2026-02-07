@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
 import { useLocalizedPath } from "@/hooks/useLocalizedPath";
 import roomLoft from "@/assets/Douche_Bad_Loft.jpg";
-import roomMidsomer from "@/assets/bed_Recht.jpg";
+import roomMidsomer from "@/assets/hero-midsommer.jpg";
 
 const RoomsPreview = () => {
   const { t } = useTranslation();

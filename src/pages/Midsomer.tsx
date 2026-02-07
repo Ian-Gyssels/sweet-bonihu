@@ -6,7 +6,7 @@ import {Button} from "@/components/ui/button";
 import {motion} from "framer-motion";
 import {useTranslation} from "react-i18next";
 import {useLanguageSync} from "@/hooks/useLanguageSync";
-import roomMidsomer from "@/assets/room-midsomer.jpg";
+import roomMidsomer from "@/assets/hero-midsommer.jpg";
 import PageHero from "@/components/PageHero.tsx";
 
 const Midsomer = () => {
