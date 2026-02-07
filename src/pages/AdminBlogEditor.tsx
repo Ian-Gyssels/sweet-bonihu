@@ -1,12 +1,12 @@
-import { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { ArrowLeft, Save, Eye } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import {useState, useEffect} from 'react';
+import {useNavigate, useParams} from 'react-router-dom';
+import {motion} from 'framer-motion';
+import {ArrowLeft, Save, Eye} from 'lucide-react';
+import {Button} from '@/components/ui/button';
 import AdminSEO from '@/components/AdminSEO';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Label } from '@/components/ui/label';
+import {Input} from '@/components/ui/input';
+import {Textarea} from '@/components/ui/textarea';
+import {Label} from '@/components/ui/label';
 import MarkdownEditor from '@/components/MarkdownEditor';
 import {
     Select,
@@ -19,19 +19,17 @@ import {
     getBlogPosts,
     createBlogPost,
     updateBlogPost,
-    isAdminAuthenticated,
-    generateSlug,
-    StoredBlogPost,
+    generateSlug
 } from '@/lib/blogStorage';
-import { useLocalizedPath } from '@/hooks/useLocalizedPath';
-import { BlogPost } from '@/data/blogPosts';
-import { toast } from 'sonner';
+import {useLocalizedPath} from '@/hooks/useLocalizedPath';
+import {BlogPost} from '@/data/blogPosts';
+import {toast} from 'sonner';
 
 const AdminBlogEditor = () => {
-    const { id } = useParams<{ id: string }>();
+    const {id} = useParams<{ id: string }>();
     const isEditing = Boolean(id);
     const navigate = useNavigate();
-    const { getPaths } = useLocalizedPath();
+    const {getPaths} = useLocalizedPath();
     const paths = getPaths();
 
     const [formData, setFormData] = useState({
@@ -47,11 +45,6 @@ const AdminBlogEditor = () => {
     const [isSaving, setIsSaving] = useState(false);
 
     useEffect(() => {
-        if (!isAdminAuthenticated()) {
-            navigate(paths.adminLogin);
-            return;
-        }
-
         if (isEditing && id) {
             const posts = getBlogPosts();
             const post = posts.find(p => p.id === id);
@@ -70,11 +63,11 @@ const AdminBlogEditor = () => {
                 navigate(paths.adminBlog);
             }
         }
-    }, [id, isEditing, navigate, paths.adminBlog, paths.adminLogin]);
+    }, [id, isEditing, navigate, paths.adminBlog]);
 
     const handleChange = (field: string, value: string) => {
         setFormData(prev => {
-            const updated = { ...prev, [field]: value };
+            const updated = {...prev, [field]: value};
 
             // Auto-generate slug from title
             if (field === 'title' && autoSlug) {
@@ -129,7 +122,7 @@ const AdminBlogEditor = () => {
 
     return (
         <>
-            <AdminSEO />
+            <AdminSEO/>
             <div className="min-h-screen bg-background">
                 {/* Header */}
                 <header className="bg-card border-b border-border sticky top-0 z-50">
@@ -140,7 +133,7 @@ const AdminBlogEditor = () => {
                                 size="sm"
                                 onClick={() => navigate(paths.adminBlog)}
                             >
-                                <ArrowLeft className="w-4 h-4 mr-2" />
+                                <ArrowLeft className="w-4 h-4 mr-2"/>
                                 Terug
                             </Button>
                             <h1 className="font-serif text-xl font-medium text-foreground">
@@ -154,12 +147,12 @@ const AdminBlogEditor = () => {
                                     size="sm"
                                     onClick={() => window.open(`${paths.blog}/${formData.slug}`, '_blank')}
                                 >
-                                    <Eye className="w-4 h-4 mr-2" />
+                                    <Eye className="w-4 h-4 mr-2"/>
                                     Preview
                                 </Button>
                             )}
                             <Button onClick={handleSubmit} disabled={isSaving}>
-                                <Save className="w-4 h-4 mr-2" />
+                                <Save className="w-4 h-4 mr-2"/>
                                 {isSaving ? 'Opslaan...' : 'Opslaan'}
                             </Button>
                         </div>
@@ -168,8 +161,8 @@ const AdminBlogEditor = () => {
 
                 <main className="container mx-auto px-6 py-8 max-w-4xl">
                     <motion.form
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
+                        initial={{opacity: 0, y: 20}}
+                        animate={{opacity: 1, y: 0}}
                         onSubmit={handleSubmit}
                         className="space-y-8"
                     >
@@ -213,7 +206,7 @@ const AdminBlogEditor = () => {
                                             onValueChange={(value) => handleChange('category', value)}
                                         >
                                             <SelectTrigger className="mt-1.5">
-                                                <SelectValue />
+                                                <SelectValue/>
                                             </SelectTrigger>
                                             <SelectContent>
                                                 <SelectItem value="travel">Reizen</SelectItem>
@@ -295,7 +288,7 @@ const AdminBlogEditor = () => {
                                 Annuleren
                             </Button>
                             <Button type="submit" disabled={isSaving}>
-                                <Save className="w-4 h-4 mr-2" />
+                                <Save className="w-4 h-4 mr-2"/>
                                 {isEditing ? 'Bijwerken' : 'Publiceren'}
                             </Button>
                         </div>
