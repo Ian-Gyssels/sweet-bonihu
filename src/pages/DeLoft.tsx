@@ -6,7 +6,7 @@ import {Button} from "@/components/ui/button";
 import {motion} from "framer-motion";
 import {useTranslation} from "react-i18next";
 import {useLanguageSync} from "@/hooks/useLanguageSync";
-import roomLoft from "@/assets/room-loft.jpg";
+import roomLoft from "@/assets/hero-loft.jpg";
 import PageHero from "@/components/PageHero.tsx";
 
 const DeLoft = () => {

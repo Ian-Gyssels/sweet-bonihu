@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { useTranslation } from "react-i18next";
 import { useLocalizedPath } from "@/hooks/useLocalizedPath";
-import roomLoft from "@/assets/Douche_Bad_Loft.jpg";
+import roomLoft from "@/assets/hero-loft.jpg";
 import roomMidsomer from "@/assets/hero-midsommer.jpg";
 
 const RoomsPreview = () => {
