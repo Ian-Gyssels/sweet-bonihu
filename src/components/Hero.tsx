@@ -1,7 +1,7 @@
 import {Button} from "@/components/ui/button";
 import {motion} from "framer-motion";
 import {useTranslation} from "react-i18next";
-import heroImage from "@/assets/hero-wellness.jpg";
+import heroImage from "@/assets/hero-homepage.jpg";
 
 const Hero = () => {
     const {t} = useTranslation();

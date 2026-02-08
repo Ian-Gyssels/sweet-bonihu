@@ -1,36 +1,62 @@
 import {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import {motion} from 'framer-motion';
-import {Lock, AlertCircle} from 'lucide-react';
+import {Lock, Mail, AlertCircle} from 'lucide-react';
 import {Button} from '@/components/ui/button';
 import {Input} from '@/components/ui/input';
-import {loginAdmin} from '@/lib/blogStorage';
 import {useLocalizedPath} from '@/hooks/useLocalizedPath';
 import AdminSEO from '@/components/AdminSEO';
+import {useAuth} from "@/hooks/useAuth.ts";
+import {FirebaseError} from 'firebase/app';
 
 const AdminLogin = () => {
+    const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
     const {getPaths} = useLocalizedPath();
     const paths = getPaths();
+    const {signIn, user} = useAuth();
 
-    const handleSubmit = (e: React.FormEvent) => {
+    if (user) {
+        navigate(paths.adminBlog, {replace: true});
+    }
+
+    const getErrorMessage = (code: string): string => {
+        switch (code) {
+            case 'auth/invalid-credential':
+            case 'auth/wrong-password':
+                return 'Onjuist e-mailadres of wachtwoord';
+            case 'auth/user-not-found':
+                return 'Geen account gevonden met dit e-mailadres';
+            case 'auth/too-many-requests':
+                return 'Te veel inlogpogingen. Probeer later opnieuw.';
+            case 'auth/invalid-email':
+                return 'Ongeldig e-mailadres';
+            default:
+                return 'Er is een fout opgetreden bij het inloggen';
+        }
+    };
+
+
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsLoading(true);
         setError('');
 
-        // Simulate a small delay for UX
-        setTimeout(() => {
-            if (loginAdmin(password)) {
-                navigate(paths.adminBlog);
+        try {
+            await signIn(email, password);
+            navigate(paths.adminBlog);
+        } catch (err: unknown) {
+            if (err instanceof FirebaseError) {
+                setError(getErrorMessage(err.code));
             } else {
-                setError('Onjuist wachtwoord');
-                setPassword('');
+                setError('Something went wrong. Please try again.');
             }
+        } finally {
             setIsLoading(false);
-        }, 500);
+        }
     };
 
     return (
@@ -53,20 +79,35 @@ const AdminLogin = () => {
                                 Admin Login
                             </h1>
                             <p className="text-muted-foreground text-sm mt-2">
-                                Voer uw wachtwoord in om toegang te krijgen
+                                Voer uw gegevens in om toegang te krijgen
                             </p>
                         </div>
 
                         <form onSubmit={handleSubmit} className="space-y-4">
-                            <div>
-                                <Input
-                                    type="password"
-                                    placeholder="Wachtwoord"
-                                    value={password}
-                                    onChange={(e) => setPassword(e.target.value)}
-                                    className="w-full"
-                                    autoFocus
-                                />
+                            <div className="space-y-4">
+                                <div className="relative">
+                                    <Mail className="absolute left-3 top-3 h-4 w-4 text-muted-foreground"/>
+                                    <Input
+                                        type="email"
+                                        placeholder="E-mailadres"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        className="pl-10"
+                                        required
+                                        autoFocus
+                                    />
+                                </div>
+                                <div className="relative">
+                                    <Lock className="absolute left-3 top-3 h-4 w-4 text-muted-foreground"/>
+                                    <Input
+                                        type="password"
+                                        placeholder="Wachtwoord"
+                                        value={password}
+                                        onChange={(e) => setPassword(e.target.value)}
+                                        className="pl-10"
+                                        required
+                                    />
+                                </div>
                             </div>
 
                             {error && (
@@ -79,7 +120,7 @@ const AdminLogin = () => {
                             <Button
                                 type="submit"
                                 className="w-full"
-                                disabled={isLoading || !password}
+                                disabled={isLoading || !email || !password}
                             >
                                 {isLoading ? 'Bezig...' : 'Inloggen'}
                             </Button>

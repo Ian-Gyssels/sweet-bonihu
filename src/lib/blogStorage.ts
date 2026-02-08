@@ -1,8 +1,6 @@
-import { BlogPost } from '@/data/blogPosts';
+import {BlogPost} from '@/data/blogPosts';
 
 const BLOG_POSTS_KEY = 'sweetbonihu_blog_posts';
-const ADMIN_AUTH_KEY = 'sweetbonihu_admin_auth';
-const ADMIN_PASSWORD = 'sweetbonihu2024'; // Simple password for demo
 
 export interface StoredBlogPost extends Omit<BlogPost, 'id'> {
     id: string;
@@ -76,23 +74,6 @@ export const deleteBlogPost = (id: string): boolean => {
     if (filtered.length === posts.length) return false;
     localStorage.setItem(BLOG_POSTS_KEY, JSON.stringify(filtered));
     return true;
-};
-
-// Admin authentication
-export const isAdminAuthenticated = (): boolean => {
-    return localStorage.getItem(ADMIN_AUTH_KEY) === 'true';
-};
-
-export const loginAdmin = (password: string): boolean => {
-    if (password === ADMIN_PASSWORD) {
-        localStorage.setItem(ADMIN_AUTH_KEY, 'true');
-        return true;
-    }
-    return false;
-};
-
-export const logoutAdmin = (): void => {
-    localStorage.removeItem(ADMIN_AUTH_KEY);
 };
 
 // Generate slug from title
