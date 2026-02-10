@@ -1,4 +1,4 @@
-import { defineConfig } from "vite";
+import {defineConfig} from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import prerender from "@prerenderer/rollup-plugin";
@@ -12,6 +12,7 @@ const prerenderRoutes = [
     "/romantisch-pakket",
     "/contact",
     "/blog",
+    "/privacy-policy",
     // English routes
     "/en",
     "/en/the-loft",
@@ -19,6 +20,7 @@ const prerenderRoutes = [
     "/en/romantic-package",
     "/en/contact",
     "/en/blog",
+    "/en/privacy-policy",
     // French routes
     "/fr",
     "/fr/le-loft",
@@ -26,10 +28,13 @@ const prerenderRoutes = [
     "/fr/forfait-romantique",
     "/fr/contact",
     "/fr/blog",
+    "/fr/politique-de-confidentialite",
+    //admin routes
+    "/admin/login",
 ];
 
 // https://vitejs.dev/config/
-export default defineConfig(({ mode }) => ({
+export default defineConfig(({mode}) => ({
     server: {
         host: "::",
         port: 8080,

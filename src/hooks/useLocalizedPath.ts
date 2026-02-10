@@ -1,5 +1,5 @@
-import { useLocation } from 'react-router-dom';
-import { routeMappings, getLanguageFromPath, LanguageCode } from '@/i18n/config';
+import {useLocation} from 'react-router-dom';
+import {routeMappings, getLanguageFromPath, LanguageCode} from '@/i18n/config';
 
 /**
  * Hook to get localized paths for the current language
@@ -25,6 +25,7 @@ export const useLocalizedPath = () => {
         romantic: routeMappings[currentLang].romantic,
         contact: routeMappings[currentLang].contact,
         blog: routeMappings[currentLang].blog,
+        privacy: routeMappings[currentLang].privacy,
         // Admin paths (not language-specific)
         adminLogin: '/admin/login',
         adminBlog: '/admin/blog',

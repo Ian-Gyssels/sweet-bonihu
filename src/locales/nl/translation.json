@@ -206,6 +206,7 @@
   "footer": {
     "description": "Luxe wellness B&B in het hart van het romantische Brugge. Ontdek ultieme ontspanning.",
     "navigation": "Navigatie",
+    "privacy": "Privacybeleid",
     "contactTitle": "Contact",
     "location": "Fortuinstraat 79, 8310 Brugge",
     "copyright": "Sweet Bonihu. Alle rechten voorbehouden."
@@ -229,5 +230,12 @@
     "title": "404",
     "message": "Oeps! Pagina niet gevonden",
     "backHome": "Terug naar Home"
+  },
+  "cookies": {
+    "title": "We gebruiken cookies",
+    "description": "We gebruiken cookies om uw ervaring te verbeteren en het verkeer op de website te analyseren. Door op 'Accepteren' te klikken, stemt u in met ons gebruik van cookies.",
+    "accept": "Accepteren",
+    "decline": "Weigeren",
+    "learnMore": "Meer informatie"
   }
 }

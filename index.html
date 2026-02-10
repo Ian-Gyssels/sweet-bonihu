@@ -1,30 +1,71 @@
 <!doctype html>
 <html lang="nl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
     <title>Sweet Bonihu | Luxe Wellness B&B in België</title>
-    <meta name="description" content="Ontdek ultieme ontspanning in onze luxe wellness B&B. Privé sauna, jacuzzi en stijlvolle kamers in het hart van België." />
-    <meta name="author" content="Sweet Bonihu" />
+    <meta content="Ontdek ultieme ontspanning in onze luxe wellness B&B. Privé sauna, jacuzzi en stijlvolle kamers in het hart van België."
+          name="description"/>
+    <meta content="Sweet Bonihu" name="author"/>
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Sweet Bonihu | Luxe Wellness B&B" />
-    <meta property="og:description" content="Ontdek ultieme ontspanning in onze luxe wellness B&B." />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://sweetbonihu.be/og-image.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:site_name" content="Sweet Bonihu" />
+    <meta content="Sweet Bonihu | Luxe Wellness B&B" property="og:title"/>
+    <meta content="Ontdek ultieme ontspanning in onze luxe wellness B&B." property="og:description"/>
+    <meta content="website" property="og:type"/>
+    <meta content="https://sweetbonihu.be/og-image.jpg" property="og:image"/>
+    <meta content="1200" property="og:image:width"/>
+    <meta content="630" property="og:image:height"/>
+    <meta content="Sweet Bonihu" property="og:site_name"/>
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Sweet Bonihu | Luxe Wellness B&B" />
-    <meta name="twitter:description" content="Ontdek ultieme ontspanning in onze luxe wellness B&B." />
-    <meta name="twitter:image" content="https://sweetbonihu.be/og-image.jpg" />
-  </head>
+    <meta content="summary_large_image" name="twitter:card"/>
+    <meta content="Sweet Bonihu | Luxe Wellness B&B" name="twitter:title"/>
+    <meta content="Ontdek ultieme ontspanning in onze luxe wellness B&B." name="twitter:description"/>
+    <meta content="https://sweetbonihu.be/og-image.jpg" name="twitter:image"/>
 
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <!-- Google Consent Mode -->
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        // Default consent settings
+        var storedConsent = getCookie('cookie-consent') || localStorage.getItem('cookie-consent');
+        if (storedConsent === 'granted') {
+            gtag('consent', 'default', {
+                'ad_storage': 'granted',
+                'ad_user_data': 'granted',
+                'ad_personalization': 'denied',
+                'analytics_storage': 'granted'
+            });
+        } else {
+            gtag('consent', 'default', {
+                'ad_storage': 'denied',
+                'ad_user_data': 'denied',
+                'ad_personalization': 'denied',
+                'analytics_storage': 'denied'
+            });
+        }
+
+        gtag('set', 'ads_data_redaction', true);
+    </script>
+</head>
+
+<body>
+<div id="root"></div>
+<script src="/src/main.tsx" type="module"></script>
+</body>
 </html>

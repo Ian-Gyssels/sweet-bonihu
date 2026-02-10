@@ -206,6 +206,7 @@
   "footer": {
     "description": "Luxury wellness B&B in the heart of romantic Bruges. Discover ultimate relaxation.",
     "navigation": "Navigation",
+    "privacy": "Privacy Policy",
     "contactTitle": "Contact",
     "location": "Fortuinstraat 79, 8310 Bruges",
     "copyright": "Sweet Bonihu. All rights reserved."
@@ -229,5 +230,12 @@
     "title": "404",
     "message": "Oops! Page not found",
     "backHome": "Back to Home"
+  },
+  "cookies": {
+    "title": "We use cookies",
+    "description": "We use cookies to improve your experience and analyze website traffic. By clicking 'Accept', you consent to our use of cookies.",
+    "accept": "Accept",
+    "decline": "Decline",
+    "learnMore": "Learn more"
   }
 }

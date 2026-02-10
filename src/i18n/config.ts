@@ -1,14 +1,14 @@
 import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
+import {initReactI18next} from 'react-i18next';
 
 import nlTranslation from '@/locales/nl/translation.json';
 import enTranslation from '@/locales/en/translation.json';
 import frTranslation from '@/locales/fr/translation.json';
 
 export const languages = [
-    { code: 'nl', name: 'Nederlands', flag: '🇳🇱' },
-    { code: 'en', name: 'English', flag: '🇬🇧' },
-    { code: 'fr', name: 'Français', flag: '🇫🇷' },
+    {code: 'nl', name: 'Nederlands', flag: '🇳🇱'},
+    {code: 'en', name: 'English', flag: '🇬🇧'},
+    {code: 'fr', name: 'Français', flag: '🇫🇷'},
 ] as const;
 
 export type LanguageCode = typeof languages[number]['code'];
@@ -24,6 +24,7 @@ export const routeMappings: Record<LanguageCode, Record<string, string>> = {
         romantic: '/romantisch-pakket',
         contact: '/contact',
         blog: '/blog',
+        privacy: '/privacy-policy',
     },
     en: {
         home: '/en',
@@ -32,6 +33,7 @@ export const routeMappings: Record<LanguageCode, Record<string, string>> = {
         romantic: '/en/romantic-package',
         contact: '/en/contact',
         blog: '/en/blog',
+        privacy: '/en/privacy-policy',
     },
     fr: {
         home: '/fr',
@@ -40,6 +42,7 @@ export const routeMappings: Record<LanguageCode, Record<string, string>> = {
         romantic: '/fr/forfait-romantique',
         contact: '/fr/contact',
         blog: '/fr/blog',
+        privacy: '/fr/politique-de-confidentialite',
     },
 };
 
@@ -64,9 +67,9 @@ export const getLanguageFromPath = (path: string): LanguageCode => {
 
 i18n.use(initReactI18next).init({
     resources: {
-        nl: { translation: nlTranslation },
-        en: { translation: enTranslation },
-        fr: { translation: frTranslation },
+        nl: {translation: nlTranslation},
+        en: {translation: enTranslation},
+        fr: {translation: frTranslation},
     },
     lng: defaultLanguage,
     fallbackLng: defaultLanguage,

@@ -46,6 +46,10 @@ const Footer = () => {
                                   className="font-sans text-sm text-background/70 hover:text-background transition-colors">
                                 {t('nav.contact')}
                             </Link>
+                            <Link to={paths.privacy}
+                                  className="font-sans text-sm text-background/70 hover:text-background transition-colors">
+                                {t('footer.privacy')}
+                            </Link>
                         </nav>
                     </div>
                     <div>
