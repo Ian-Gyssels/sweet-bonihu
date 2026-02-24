@@ -1,12 +1,12 @@
-import {useState, useEffect} from 'react';
-import {useNavigate, useParams} from 'react-router-dom';
-import {motion} from 'framer-motion';
-import {ArrowLeft, Save, Eye} from 'lucide-react';
-import {Button} from '@/components/ui/button';
+import { useState, useEffect } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { ArrowLeft, Save, Eye } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import AdminSEO from '@/components/AdminSEO';
-import {Input} from '@/components/ui/input';
-import {Textarea} from '@/components/ui/textarea';
-import {Label} from '@/components/ui/label';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Label } from '@/components/ui/label';
 import MarkdownEditor from '@/components/MarkdownEditor';
 import {
     Select,
@@ -16,21 +16,24 @@ import {
     SelectValue,
 } from '@/components/ui/select';
 import {
-    getBlogPosts,
     createBlogPost,
     updateBlogPost,
     generateSlug
 } from '@/lib/blogStorage';
-import {useLocalizedPath} from '@/hooks/useLocalizedPath';
-import {BlogPost} from '@/data/blogPosts';
-import {toast} from 'sonner';
+import { useBlogPosts } from '@/hooks/useBlogPosts';
+import { useAuth } from '@/hooks/useAuth';
+import { useLocalizedPath } from '@/hooks/useLocalizedPath';
+import { BlogPost } from '@/data/blogPosts';
+import { toast } from 'sonner';
 
 const AdminBlogEditor = () => {
-    const {id} = useParams<{ id: string }>();
+    const { id } = useParams<{ id: string }>();
     const isEditing = Boolean(id);
     const navigate = useNavigate();
-    const {getPaths} = useLocalizedPath();
+    const { getPaths } = useLocalizedPath();
     const paths = getPaths();
+    const { posts, isLoading, refresh } = useBlogPosts();
+    const { user } = useAuth();
 
     const [formData, setFormData] = useState({
         title: '',
@@ -45,9 +48,8 @@ const AdminBlogEditor = () => {
     const [isSaving, setIsSaving] = useState(false);
 
     useEffect(() => {
-        if (isEditing && id) {
-            const posts = getBlogPosts();
-            const post = posts.find(p => p.id === id);
+        if (isEditing && id && !isLoading) {
+            const post = posts.find((p: BlogPost) => p.slug === id);
             if (post) {
                 setFormData({
                     title: post.title,
@@ -63,11 +65,11 @@ const AdminBlogEditor = () => {
                 navigate(paths.adminBlog);
             }
         }
-    }, [id, isEditing, navigate, paths.adminBlog]);
+    }, [id, isEditing, isLoading, posts, navigate, paths.adminBlog]);
 
     const handleChange = (field: string, value: string) => {
         setFormData(prev => {
-            const updated = {...prev, [field]: value};
+            const updated = { ...prev, [field]: value };
 
             // Auto-generate slug from title
             if (field === 'title' && autoSlug) {
@@ -83,7 +85,7 @@ const AdminBlogEditor = () => {
         }
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSaving(true);
 
@@ -104,14 +106,23 @@ const AdminBlogEditor = () => {
             return;
         }
 
+        if (!user) {
+            toast.error('Je moet ingelogd zijn om dit te doen');
+            setIsSaving(false);
+            return;
+        }
+
         try {
+            const token = await user.getIdToken();
+
             if (isEditing && id) {
-                updateBlogPost(id, formData);
+                await updateBlogPost(id, formData, token);
                 toast.success('Artikel bijgewerkt');
             } else {
-                createBlogPost(formData);
+                await createBlogPost(formData, token);
                 toast.success('Artikel aangemaakt');
             }
+            await refresh();
             navigate(paths.adminBlog);
         } catch {
             toast.error('Er is een fout opgetreden');
@@ -122,7 +133,7 @@ const AdminBlogEditor = () => {
 
     return (
         <>
-            <AdminSEO/>
+            <AdminSEO />
             <div className="min-h-screen bg-background">
                 {/* Header */}
                 <header className="bg-card border-b border-border sticky top-0 z-50">
@@ -133,7 +144,7 @@ const AdminBlogEditor = () => {
                                 size="sm"
                                 onClick={() => navigate(paths.adminBlog)}
                             >
-                                <ArrowLeft className="w-4 h-4 mr-2"/>
+                                <ArrowLeft className="w-4 h-4 mr-2" />
                                 Terug
                             </Button>
                             <h1 className="font-serif text-xl font-medium text-foreground">
@@ -147,12 +158,12 @@ const AdminBlogEditor = () => {
                                     size="sm"
                                     onClick={() => window.open(`${paths.blog}/${formData.slug}`, '_blank')}
                                 >
-                                    <Eye className="w-4 h-4 mr-2"/>
+                                    <Eye className="w-4 h-4 mr-2" />
                                     Preview
                                 </Button>
                             )}
                             <Button onClick={handleSubmit} disabled={isSaving}>
-                                <Save className="w-4 h-4 mr-2"/>
+                                <Save className="w-4 h-4 mr-2" />
                                 {isSaving ? 'Opslaan...' : 'Opslaan'}
                             </Button>
                         </div>
@@ -161,8 +172,8 @@ const AdminBlogEditor = () => {
 
                 <main className="container mx-auto px-6 py-8 max-w-4xl">
                     <motion.form
-                        initial={{opacity: 0, y: 20}}
-                        animate={{opacity: 1, y: 0}}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
                         onSubmit={handleSubmit}
                         className="space-y-8"
                     >
@@ -206,7 +217,7 @@ const AdminBlogEditor = () => {
                                             onValueChange={(value) => handleChange('category', value)}
                                         >
                                             <SelectTrigger className="mt-1.5">
-                                                <SelectValue/>
+                                                <SelectValue />
                                             </SelectTrigger>
                                             <SelectContent>
                                                 <SelectItem value="travel">Reizen</SelectItem>
@@ -288,7 +299,7 @@ const AdminBlogEditor = () => {
                                 Annuleren
                             </Button>
                             <Button type="submit" disabled={isSaving}>
-                                <Save className="w-4 h-4 mr-2"/>
+                                <Save className="w-4 h-4 mr-2" />
                                 {isEditing ? 'Bijwerken' : 'Publiceren'}
                             </Button>
                         </div>

@@ -1,6 +1,8 @@
-import {BlogPost} from '@/data/blogPosts';
+import { BlogPost } from '@/data/blogPosts';
+import { useAuth } from "@/hooks/useAuth.ts";
+import { AuthContext } from "@/contexts/AuthContext.tsx";
 
-const BLOG_POSTS_KEY = 'sweetbonihu_blog_posts';
+const API_URL = 'http://localhost:3000/blogpost';
 
 export interface StoredBlogPost extends Omit<BlogPost, 'id'> {
     id: string;
@@ -8,72 +10,111 @@ export interface StoredBlogPost extends Omit<BlogPost, 'id'> {
     updatedAt: string;
 }
 
-// Initialize localStorage with default posts if empty
-export const initializeBlogStorage = (defaultPosts: BlogPost[]): void => {
-    const existing = localStorage.getItem(BLOG_POSTS_KEY);
-    if (!existing) {
-        const postsWithTimestamps: StoredBlogPost[] = defaultPosts.map(post => ({
-            ...post,
-            createdAt: post.date,
-            updatedAt: post.date,
-        }));
-        localStorage.setItem(BLOG_POSTS_KEY, JSON.stringify(postsWithTimestamps));
+// Get all blog posts from API
+export const getBlogPosts = async (): Promise<BlogPost[]> => {
+    try {
+        const res = await fetch(API_URL);
+        if (!res.ok) throw new Error('Failed to fetch blog posts');
+        const data = await res.json();
+        return data.map((post: any) => ({ ...post, id: post._id || post.id }));
+    } catch (err) {
+        console.error(err);
+        return [];
     }
 };
 
-// Get all blog posts from localStorage
-export const getBlogPosts = (): StoredBlogPost[] => {
-    const stored = localStorage.getItem(BLOG_POSTS_KEY);
-    if (!stored) return [];
+// Get related blog posts by category
+export const getRelatedBlogPosts = async (category: string, excludeId: string, limit: number = 2): Promise<BlogPost[]> => {
     try {
-        return JSON.parse(stored);
-    } catch {
+        const res = await fetch(`${API_URL}?category=${category}&limit=${limit + 1}`);
+        if (!res.ok) throw new Error('Failed to fetch related blog posts');
+        const data = await res.json();
+        const posts = data.map((post: any) => ({ ...post, id: post._id || post.id }));
+        return posts.filter((p: any) => p.id !== excludeId).slice(0, limit);
+    } catch (err) {
+        console.error(err);
         return [];
     }
 };
 
 // Get a single blog post by slug
-export const getBlogPostBySlug = (slug: string): StoredBlogPost | undefined => {
-    const posts = getBlogPosts();
-    return posts.find(post => post.slug === slug);
+export const getBlogPostBySlug = async (slug: string): Promise<BlogPost | undefined> => {
+    try {
+        const res = await fetch(`${API_URL}/${slug}`);
+        if (!res.ok) throw new Error('Failed to fetch blog post');
+        const data = await res.json();
+        if (Array.isArray(data)) {
+            const post = data.length > 0 ? data[0] : undefined;
+            return post ? { ...post, id: post._id || post.id } : undefined;
+        }
+        return (data.id || data._id) ? { ...data, id: data._id || data.id } : undefined;
+    } catch (err) {
+        console.error(err);
+        return undefined;
+    }
 };
 
 // Create a new blog post
-export const createBlogPost = (post: Omit<StoredBlogPost, 'id' | 'createdAt' | 'updatedAt'>): StoredBlogPost => {
-    const posts = getBlogPosts();
-    const newPost: StoredBlogPost = {
-        ...post,
-        id: Date.now().toString(),
-        createdAt: new Date().toISOString().split('T')[0],
-        updatedAt: new Date().toISOString().split('T')[0],
-    };
-    posts.unshift(newPost);
-    localStorage.setItem(BLOG_POSTS_KEY, JSON.stringify(posts));
-    return newPost;
+export const createBlogPost = async (post: Omit<BlogPost, 'id' | 'createdAt' | 'updatedAt'>, token: string): Promise<BlogPost | null> => {
+    try {
+        const newPost = {
+            ...post,
+            createdAt: new Date().toISOString(),
+            updatedAt: new Date().toISOString(),
+        };
+        const res = await fetch(API_URL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(newPost),
+        });
+        if (!res.ok) throw new Error('Failed to create blog post');
+        return await res.json();
+    } catch (err) {
+        console.error(err);
+        return null;
+    }
 };
 
 // Update an existing blog post
-export const updateBlogPost = (id: string, updates: Partial<Omit<StoredBlogPost, 'id' | 'createdAt'>>): StoredBlogPost | null => {
-    const posts = getBlogPosts();
-    const index = posts.findIndex(post => post.id === id);
-    if (index === -1) return null;
-
-    posts[index] = {
-        ...posts[index],
-        ...updates,
-        updatedAt: new Date().toISOString().split('T')[0],
-    };
-    localStorage.setItem(BLOG_POSTS_KEY, JSON.stringify(posts));
-    return posts[index];
+export const updateBlogPost = async (id: string, updates: Partial<Omit<BlogPost, 'id' | 'createdAt'>>, token: string): Promise<BlogPost | null> => {
+    try {
+        const updatedData = {
+            ...updates,
+            updatedAt: new Date().toISOString(),
+        };
+        const res = await fetch(`${API_URL}/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(updatedData),
+        });
+        if (!res.ok) throw new Error('Failed to update blog post');
+        return await res.json();
+    } catch (err) {
+        console.error(err);
+        return null;
+    }
 };
 
 // Delete a blog post
-export const deleteBlogPost = (id: string): boolean => {
-    const posts = getBlogPosts();
-    const filtered = posts.filter(post => post.id !== id);
-    if (filtered.length === posts.length) return false;
-    localStorage.setItem(BLOG_POSTS_KEY, JSON.stringify(filtered));
-    return true;
+export const deleteBlogPost = async (id: string, token: string): Promise<boolean> => {
+    try {
+        const res = await fetch(`${API_URL}/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${token}`,
+            },
+        });
+        return res.ok;
+    } catch (err) {
+        console.error(err);
+        return false;
+    }
 };
 
 // Generate slug from title

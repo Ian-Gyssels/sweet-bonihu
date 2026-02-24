@@ -1,17 +1,17 @@
-import {useState, useEffect} from 'react';
-import {useNavigate} from 'react-router-dom';
-import {motion} from 'framer-motion';
-import {Plus, Edit2, Trash2, LogOut, Eye} from 'lucide-react';
-import {Button} from '@/components/ui/button';
+import { useState, useEffect, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
+import { Plus, Edit2, Trash2, LogOut, Eye } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import AdminSEO from '@/components/AdminSEO';
-import {useAuth} from '@/hooks/useAuth';
+import { useAuth } from '@/hooks/useAuth';
 import {
-    getBlogPosts,
     deleteBlogPost,
     StoredBlogPost
 } from '@/lib/blogStorage';
-import {useLocalizedPath} from '@/hooks/useLocalizedPath';
-import {getCategoryLabel} from '@/data/blogPosts';
+import { useBlogPosts } from '@/hooks/useBlogPosts';
+import { useLocalizedPath } from '@/hooks/useLocalizedPath';
+import { BlogPost, getCategoryLabel } from '@/data/blogPosts';
 import {
     AlertDialog,
     AlertDialogAction,
@@ -22,25 +22,18 @@ import {
     AlertDialogHeader,
     AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
-import {toast} from 'sonner';
+import { toast } from 'sonner';
+import { AuthContext } from "@/contexts/AuthContext.tsx";
 
 const AdminBlog = () => {
-    const [posts, setPosts] = useState<StoredBlogPost[]>([]);
+    const { posts, refresh } = useBlogPosts();
     const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
     const [postToDelete, setPostToDelete] = useState<string | null>(null);
     const navigate = useNavigate();
-    const {getPaths} = useLocalizedPath();
+    const { getPaths } = useLocalizedPath();
     const paths = getPaths();
-    const {signOut} = useAuth();
-
-    useEffect(() => {
-        loadPosts();
-    }, []);
-
-    const loadPosts = () => {
-        const blogPosts = getBlogPosts();
-        setPosts(blogPosts);
-    };
+    const { signOut } = useAuth();
+    const { user } = useContext(AuthContext);
 
     const handleLogout = async () => {
         try {
@@ -57,10 +50,11 @@ const AdminBlog = () => {
         setDeleteDialogOpen(true);
     };
 
-    const confirmDelete = () => {
+    const confirmDelete = async () => {
         if (postToDelete) {
-            deleteBlogPost(postToDelete);
-            loadPosts();
+            const token = await user.getIdToken()
+            await deleteBlogPost(postToDelete, token);
+            await refresh();
             toast.success('Blog post verwijderd');
         }
         setDeleteDialogOpen(false);
@@ -77,7 +71,7 @@ const AdminBlog = () => {
 
     return (
         <>
-            <AdminSEO/>
+            <AdminSEO />
             <div className="min-h-screen bg-background">
                 {/* Header */}
                 <header className="bg-card border-b border-border sticky top-0 z-50">
@@ -91,7 +85,7 @@ const AdminBlog = () => {
                                 size="sm"
                                 onClick={() => navigate(paths.blog)}
                             >
-                                <Eye className="w-4 h-4 mr-2"/>
+                                <Eye className="w-4 h-4 mr-2" />
                                 Bekijk Blog
                             </Button>
                             <Button
@@ -99,7 +93,7 @@ const AdminBlog = () => {
                                 size="sm"
                                 onClick={handleLogout}
                             >
-                                <LogOut className="w-4 h-4 mr-2"/>
+                                <LogOut className="w-4 h-4 mr-2" />
                                 Uitloggen
                             </Button>
                         </div>
@@ -118,7 +112,7 @@ const AdminBlog = () => {
                             </p>
                         </div>
                         <Button onClick={() => navigate(paths.adminBlogNew)}>
-                            <Plus className="w-4 h-4 mr-2"/>
+                            <Plus className="w-4 h-4 mr-2" />
                             Nieuw Artikel
                         </Button>
                     </div>
@@ -129,9 +123,9 @@ const AdminBlog = () => {
                             {posts.map((post, index) => (
                                 <motion.div
                                     key={post.id}
-                                    initial={{opacity: 0, y: 10}}
-                                    animate={{opacity: 1, y: 0}}
-                                    transition={{delay: index * 0.05}}
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: index * 0.05 }}
                                     className="bg-card border border-border rounded-lg p-4 hover:border-primary/30 transition-colors"
                                 >
                                     <div className="flex items-start gap-4">
@@ -149,12 +143,12 @@ const AdminBlog = () => {
                                             <div className="flex items-start justify-between gap-4">
                                                 <div className="min-w-0">
                                                     <div className="flex items-center gap-2 mb-1">
-                          <span className="px-2 py-0.5 text-xs font-medium bg-primary/10 text-primary rounded-full">
-                            {getCategoryLabel(post.category)}
-                          </span>
+                                                        <span className="px-2 py-0.5 text-xs font-medium bg-primary/10 text-primary rounded-full">
+                                                            {getCategoryLabel(post.category)}
+                                                        </span>
                                                         <span className="text-xs text-muted-foreground">
-                            {formatDate(post.date)}
-                          </span>
+                                                            {formatDate(post.date)}
+                                                        </span>
                                                     </div>
                                                     <h3 className="font-medium text-foreground truncate">
                                                         {post.title}
@@ -169,17 +163,17 @@ const AdminBlog = () => {
                                                     <Button
                                                         variant="ghost"
                                                         size="sm"
-                                                        onClick={() => navigate(`${paths.adminBlogEdit}/${post.id}`)}
+                                                        onClick={() => navigate(`${paths.adminBlogEdit}/${post.slug}`)}
                                                     >
-                                                        <Edit2 className="w-4 h-4"/>
+                                                        <Edit2 className="w-4 h-4" />
                                                     </Button>
                                                     <Button
                                                         variant="ghost"
                                                         size="sm"
-                                                        onClick={() => handleDelete(post.id)}
+                                                        onClick={() => handleDelete(post.slug)}
                                                         className="text-destructive hover:text-destructive"
                                                     >
-                                                        <Trash2 className="w-4 h-4"/>
+                                                        <Trash2 className="w-4 h-4" />
                                                     </Button>
                                                 </div>
                                             </div>
@@ -194,7 +188,7 @@ const AdminBlog = () => {
                                 Nog geen blog posts gevonden.
                             </p>
                             <Button onClick={() => navigate(paths.adminBlogNew)}>
-                                <Plus className="w-4 h-4 mr-2"/>
+                                <Plus className="w-4 h-4 mr-2" />
                                 Eerste Artikel Maken
                             </Button>
                         </div>
@@ -213,7 +207,7 @@ const AdminBlog = () => {
                         <AlertDialogFooter>
                             <AlertDialogCancel>Annuleren</AlertDialogCancel>
                             <AlertDialogAction onClick={confirmDelete}
-                                               className="bg-destructive hover:bg-destructive/90">
+                                className="bg-destructive hover:bg-destructive/90">
                                 Verwijderen
                             </AlertDialogAction>
                         </AlertDialogFooter>
