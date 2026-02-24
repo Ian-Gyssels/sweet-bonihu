@@ -7,7 +7,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { getCategoryLabel } from '@/data/blogPosts';
 import { useLocalizedPath } from '@/hooks/useLocalizedPath';
-import { useBlogPost, useBlogPosts } from '@/hooks/useBlogPosts';
+import { useBlogPost, useRelatedBlogPosts } from '@/hooks/useBlogPosts';
 import BlogCard from '@/components/BlogCard';
 import MarkdownRenderer from '@/components/MarkdownRenderer';
 import { Helmet } from 'react-helmet-async';
@@ -23,7 +23,7 @@ const BlogPostPage = () => {
     const currentLang = getLanguageFromPath(location.pathname) as LanguageCode;
 
     const { post, isLoading } = useBlogPost(slug);
-    const { posts: allPosts } = useBlogPosts();
+    const { posts: relatedPosts } = useRelatedBlogPosts(post?.category, post?.id, 2);
 
     if (isLoading) {
         return null;
@@ -38,11 +38,6 @@ const BlogPostPage = () => {
         month: 'long',
         day: 'numeric',
     });
-
-    // Get related posts (same category, excluding current)
-    const relatedPosts = allPosts
-        .filter(p => p.category === post.category && p.id !== post.id)
-        .slice(0, 2);
 
     const baseUrl = 'https://sweetbonihu.be';
     const canonicalUrl = `${baseUrl}${paths.blog}/${post.slug}`;
@@ -134,9 +129,9 @@ const BlogPostPage = () => {
 
                         {/* Article Header */}
                         <div className="bg-card rounded-lg border border-border p-8 md:p-12 mb-8">
-              <span className="inline-block px-3 py-1 text-xs font-medium tracking-wide uppercase bg-primary/10 text-primary rounded-full mb-4">
-                {getCategoryLabel(post.category)}
-              </span>
+                            <span className="inline-block px-3 py-1 text-xs font-medium tracking-wide uppercase bg-primary/10 text-primary rounded-full mb-4">
+                                {getCategoryLabel(post.category)}
+                            </span>
 
                             <h1 className="font-serif text-3xl md:text-4xl lg:text-5xl font-medium text-foreground mb-4">
                                 {post.title}
