@@ -36,9 +36,9 @@
     "bookNow": "Réserver"
   },
   "hero": {
-    "subtitle": "Wellness & Hébergement à Bruges",
+    "subtitle": "Wellness B&B à Bruges",
     "title": "Sweet Bonihu",
-    "description": "Découvrez la détente ultime dans nos suites wellness de luxe, situées au cœur romantique de Bruges. Un endroit où tranquillité et raffinement se rencontrent.",
+    "description": "Wellness avec nuitée à Bruges \nWeek-end romantique avec jacuzzi & sauna \nWhere quality time starts",
     "cta": "Réserver Maintenant",
     "viewRooms": "Voir les Chambres",
     "rating": "Excellent",
@@ -47,8 +47,8 @@
   "about": {
     "subtitle": "Bienvenue",
     "title": "Une Oasis de Tranquillité",
-    "description": "Sweet Bonihu offre une combinaison unique d'hospitalité flamande et de confort contemporain. Nos suites wellness sont soigneusement conçues pour vous offrir une expérience inoubliable.",
-    "descriptionSecond": "Situé à distance de marche du centre historique de Bruges, notre B&B boutique est la base parfaite pour des week-ends romantiques et des voyages de détente.",
+    "description": "Sweet Bonihu offre une combinaison unique d'hospitalité flamande et de confort contemporain. Notre suite wellness est soigneusement conçue pour vous offrir une expérience inoubliable.",
+    "descriptionSecond": "Situé à distance de marche du magnifique centre historique de Bruges, notre B&B est la base parfaite pour des week-ends romantiques et des voyages de détente — et votre fidèle compagnon à quatre pattes est également le bienvenu chez nous et sera certainement choyé.",
     "features": {
       "wellness": {
         "title": "Wellness Privé",
@@ -70,7 +70,7 @@
     "loft": {
       "name": "Le Loft",
       "subtitle": "Suite Wellness de Luxe",
-      "description": "Notre joyau au deuxième étage avec jacuzzi privé, sauna infrarouge et une vue imprenable. Parfait pour une escapade romantique.",
+      "description": "Notre joyau au deuxième étage avec jacuzzi privé, sauna infrarouge dans un style campagnard. Parfait pour une escapade romantique.",
       "features": [
         "Jacuzzi Privé",
         "Sauna Infrarouge",
@@ -97,11 +97,11 @@
     "midsomer": {
       "name": "Midsomer",
       "subtitle": "Chambre Chaleureuse",
-      "description": "Une chambre chaleureuse avec un charme authentique et un confort moderne. Idéal pour les clients recherchant paix et convivialité.",
+      "description": "Chambre confortable et fonctionnelle avec terrasse privée et petit-déjeuner pique-nique. Idéal comme base pour explorer Bruges et ses environs.",
       "features": [
         "Intérieur Authentique",
         "Confort Moderne",
-        "Animaux Acceptés"
+        "Lit King-size"
       ],
       "heroSubtitle": "Chambre Chaleureuse",
       "heroTitle": "Midsomer",
@@ -204,7 +204,7 @@
     }
   },
   "footer": {
-    "description": "B&B wellness de luxe au cœur du romantique Bruges. Découvrez la détente ultime.",
+    "description": "Where quality time starts.",
     "navigation": "Navigation",
     "privacy": "Politique de confidentialité",
     "contactTitle": "Contact",

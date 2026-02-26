@@ -36,9 +36,9 @@
     "bookNow": "Boek Nu"
   },
   "hero": {
-    "subtitle": "Wellness & Logies in Brugge",
+    "subtitle": "Wellness B&B in Brugge",
     "title": "Sweet Bonihu",
-    "description": "Ontdek ultieme ontspanning in onze luxe wellness suites, gelegen in het romantische hart van Brugge. Een plek waar rust en verfijning samenkomen.",
+    "description": "Wellness met overnachting in Brugge \nRomantisch weekend met jacuzzi & sauna \nWhere quality time starts",
     "cta": "Reserveer Nu",
     "viewRooms": "Bekijk Kamers",
     "rating": "Voortreffelijk",
@@ -47,8 +47,8 @@
   "about": {
     "subtitle": "Welkom",
     "title": "Een Oase van Rust",
-    "description": "Sweet Bonihu biedt een unieke combinatie van Vlaamse gastvrijheid en hedendaags comfort. Onze wellness suites zijn zorgvuldig ontworpen om u een onvergetelijke ervaring te bieden.",
-    "descriptionSecond": "Gelegen op wandelafstand van het historische centrum van Brugge, is ons boutique B&B de perfecte uitvalsbasis voor zowel romantische weekends als ontspanningsreizen.",
+    "description": "Sweet Bonihu biedt een unieke combinatie van Vlaamse gastvrijheid en hedendaags comfort. Onze wellness suite is zorgvuldig ontworpen om u een onvergetelijke ervaring te bieden.",
+    "descriptionSecond": "Gelegen op wandelafstand van het prachtige historische centrum van Brugge, is onze B&B de perfecte uitvalsbasis voor zowel romantische weekends als ontspanningsreizen — en uw trouwe viervoeter is bij ons ook welkom en wordt zeker verwend.",
     "features": {
       "wellness": {
         "title": "Privé Wellness",
@@ -70,7 +70,7 @@
     "loft": {
       "name": "De Loft",
       "subtitle": "Luxe Wellness Suite",
-      "description": "Onze parel op de tweede verdieping met privé jacuzzi, infrarood sauna en een adembenemend uitzicht. Perfect voor een romantische escape.",
+      "description": "Onze parel op de tweede verdieping met privé jacuzzi, infrarood sauna in landelijke stijl. Perfect voor een romantische escape.",
       "features": [
         "Privé Jacuzzi",
         "Infrarood Sauna",
@@ -97,11 +97,11 @@
     "midsomer": {
       "name": "Midsomer",
       "subtitle": "Sfeervolle Kamer",
-      "description": "Een gezellige kamer met authentieke charme en moderne comfort. Ideaal voor gasten die rust en gezelligheid zoeken.",
+      "description": "Comfortabele, functionele kamer met privé terras en picknickontbijt. Ideaal als uitvalsbasis om Brugge en omgeving te verkennen.",
       "features": [
         "Authentiek Interieur",
         "Moderne Comfort",
-        "Huisdieren Welkom"
+        "King-size Bed"
       ],
       "heroSubtitle": "Sfeervolle Kamer",
       "heroTitle": "Midsomer",
@@ -204,7 +204,7 @@
     }
   },
   "footer": {
-    "description": "Luxe wellness B&B in het hart van het romantische Brugge. Ontdek ultieme ontspanning.",
+    "description": "Where quality time starts.",
     "navigation": "Navigatie",
     "privacy": "Privacybeleid",
     "contactTitle": "Contact",

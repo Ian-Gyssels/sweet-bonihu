@@ -36,9 +36,9 @@
     "bookNow": "Book Now"
   },
   "hero": {
-    "subtitle": "Wellness & Lodging in Bruges",
+    "subtitle": "Wellness B&B in Bruges",
     "title": "Sweet Bonihu",
-    "description": "Discover ultimate relaxation in our luxury wellness suites, located in the romantic heart of Bruges. A place where tranquility and refinement come together.",
+    "description": "Wellness with overnight stay in Bruges \nRomantic weekend with jacuzzi & sauna \nWhere quality time starts",
     "cta": "Reserve Now",
     "viewRooms": "View Rooms",
     "rating": "Excellent",
@@ -47,8 +47,8 @@
   "about": {
     "subtitle": "Welcome",
     "title": "An Oasis of Tranquility",
-    "description": "Sweet Bonihu offers a unique combination of Flemish hospitality and contemporary comfort. Our wellness suites are carefully designed to provide you with an unforgettable experience.",
-    "descriptionSecond": "Located within walking distance of the historic center of Bruges, our boutique B&B is the perfect base for both romantic weekends and relaxation trips.",
+    "description": "Sweet Bonihu offers a unique combination of Flemish hospitality and contemporary comfort. Our wellness suite is carefully designed to provide you with an unforgettable experience.",
+    "descriptionSecond": "Located within walking distance of the historic center of Bruges, our B&B is the perfect base for both romantic weekends and relaxation trips — and your four-legged friend is also welcome and will certainly be pampered.",
     "features": {
       "wellness": {
         "title": "Private Wellness",
@@ -70,7 +70,7 @@
     "loft": {
       "name": "The Loft",
       "subtitle": "Luxury Wellness Suite",
-      "description": "Our gem on the second floor with private jacuzzi, infrared sauna and a breathtaking view. Perfect for a romantic escape.",
+      "description": "Our gem on the second floor with private jacuzzi, infrared sauna in country style. Perfect for a romantic escape.",
       "features": [
         "Private Jacuzzi",
         "Infrared Sauna",
@@ -97,11 +97,11 @@
     "midsomer": {
       "name": "Midsomer",
       "subtitle": "Cozy Room",
-      "description": "A cozy room with authentic charm and modern comfort. Ideal for guests seeking peace and coziness.",
+      "description": "Comfortable, functional room with private terrace and picnic breakfast. Ideal as a base for exploring Bruges and its surroundings.",
       "features": [
         "Authentic Interior",
         "Modern Comfort",
-        "Pets Welcome"
+        "King-size Bed"
       ],
       "heroSubtitle": "Cozy Room",
       "heroTitle": "Midsomer",
@@ -204,7 +204,7 @@
     }
   },
   "footer": {
-    "description": "Luxury wellness B&B in the heart of romantic Bruges. Discover ultimate relaxation.",
+    "description": "Where quality time starts.",
     "navigation": "Navigation",
     "privacy": "Privacy Policy",
     "contactTitle": "Contact",
