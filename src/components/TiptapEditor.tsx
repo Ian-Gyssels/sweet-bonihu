@@ -17,7 +17,7 @@ import {
     Quote,
     ImagePlus,
     Link as LinkIcon,
-    Loader2,
+    Loader2, X,
 } from 'lucide-react';
 import {ImageResize} from "tiptap-extension-resize-image";
 
@@ -120,6 +120,7 @@ const TiptapEditor = ({value, onChange, height = 400}: TiptapEditorProps) => {
     const fileInputRef = useRef<HTMLInputElement>(null);
     const [isUploading, setIsUploading] = useState(false);
     const [isDragOver, setIsDragOver] = useState(false);
+    const [linkInput, setLinkInput] = useState<{ show: boolean; url: string }>({show: false, url: ''});
     const turndownRef = useRef(createTurndownService());
     const isInternalUpdate = useRef(false);
 
@@ -210,11 +211,21 @@ const TiptapEditor = ({value, onChange, height = 400}: TiptapEditorProps) => {
 
     const addLink = useCallback(() => {
         if (!editor) return;
-        const url = window.prompt('URL:');
-        if (url) {
-            editor.chain().focus().setLink({href: url}).run();
+        if (editor.isActive('link')) {
+            editor.chain().focus().unsetLink().run();
+            return;
         }
+        setLinkInput({show: true, url: ''});
     }, [editor]);
+
+    const confirmLink = useCallback(() => {
+        if (!editor || !linkInput.url) {
+            setLinkInput({show: false, url: ''});
+            return;
+        }
+        editor.chain().focus().setLink({href: linkInput.url}).run();
+        setLinkInput({show: false, url: ''});
+    }, [editor, linkInput.url]);
 
     if (!editor) return null;
 
@@ -299,6 +310,30 @@ const TiptapEditor = ({value, onChange, height = 400}: TiptapEditorProps) => {
                     {isUploading ? <Loader2 className="w-4 h-4 animate-spin"/> : <ImagePlus className="w-4 h-4"/>}
                 </ToolbarButton>
             </div>
+
+            {/* Link input bar */}
+            {linkInput.show && (
+                <div className="tiptap-link-input">
+                    <input
+                        type="url"
+                        placeholder="https://..."
+                        value={linkInput.url}
+                        onChange={(e) => setLinkInput(prev => ({...prev, url: e.target.value}))}
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter') confirmLink();
+                            if (e.key === 'Escape') setLinkInput({show: false, url: ''});
+                        }}
+                        autoFocus
+                    />
+                    <button type="button" onClick={confirmLink} className="tiptap-toolbar-btn is-active">
+                        OK
+                    </button>
+                    <button type="button" onClick={() => setLinkInput({show: false, url: ''})}
+                            className="tiptap-toolbar-btn">
+                        <X/>
+                    </button>
+                </div>
+            )}
 
             {/* Editor content */}
             <div className="tiptap-content" style={{minHeight: height}}>
