@@ -19,6 +19,7 @@ import {
     Link as LinkIcon,
     Loader2,
 } from 'lucide-react';
+import {ImageResize} from "tiptap-extension-resize-image";
 
 interface TiptapEditorProps {
     value: string;
@@ -115,10 +116,7 @@ const TiptapEditor = ({value, onChange, height = 400}: TiptapEditorProps) => {
             StarterKit.configure({
                 heading: {levels: [1, 2, 3]},
             }),
-            Image.configure({
-                inline: false,
-                allowBase64: false,
-            }),
+            ImageResize,
             Link.configure({
                 openOnClick: false,
                 autolink: true,
@@ -178,7 +176,7 @@ const TiptapEditor = ({value, onChange, height = 400}: TiptapEditorProps) => {
         setIsUploading(true);
         try {
             const url = await mockUploadImage(file);
-            editor.chain().focus().setImage({src: url, alt: file.name}).run();
+            editor.chain().focus().insertContent(`<img src="${url}" alt="${file.name}" />`).run();
         } catch {
             console.error('Image upload failed');
         } finally {

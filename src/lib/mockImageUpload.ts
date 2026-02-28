@@ -13,5 +13,5 @@ export const mockUploadImage = async (file: File): Promise<string> => {
     const ext = 'webp';
 
     // Return a fake CDN URL
-    return `https://cdn.sweetbonihu.be/blog/${uuid}.${ext}`;
+    return `https://static.vecteezy.com/system/resources/thumbnails/057/068/323/small/single-fresh-red-strawberry-on-table-green-background-food-fruit-sweet-macro-juicy-plant-image-photo.jpg`;
 };
