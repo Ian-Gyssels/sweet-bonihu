@@ -97,6 +97,18 @@ const createTurndownService = () => {
             const el = node as HTMLImageElement;
             const alt = el.getAttribute('alt') || '';
             const src = el.getAttribute('src') || '';
+            const width = el.getAttribute('width') || el.style.width;
+            const height = el.getAttribute('height') || el.style.height;
+            const style = el.getAttribute('style') || '';
+
+            if (width || height || style) {
+                const attrs = [`src="${src}"`, `alt="${alt}"`];
+                if (width) attrs.push(`width="${width}"`);
+                if (height) attrs.push(`height="${height}"`);
+                if (style) attrs.push(`style="${style}"`);
+                return `\n\n<img ${attrs.join(' ')} />\n\n`;
+            }
+
             return `![${alt}](${src})`;
         },
     });
