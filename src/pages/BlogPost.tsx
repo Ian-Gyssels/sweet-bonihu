@@ -9,7 +9,7 @@ import {getCategoryLabel} from '@/data/blogPosts';
 import {useLocalizedPath} from '@/hooks/useLocalizedPath';
 import {useBlogPost, useRelatedBlogPosts} from '@/hooks/useBlogPosts';
 import BlogCard from '@/components/BlogCard';
-import MarkdownRenderer, {MarkdownRendererV2} from '@/components/MarkdownRenderer';
+import MarkdownRenderer from '@/components/MarkdownRenderer';
 import {Helmet} from 'react-helmet-async';
 import {getLanguageFromPath, LanguageCode} from '@/i18n/config';
 import {useLocation} from 'react-router-dom';
@@ -147,7 +147,7 @@ const BlogPostPage = () => {
 
                         {/* Article Body */}
                         <div className="bg-card rounded-lg border border-border p-8 md:p-12 mb-8">
-                            <MarkdownRendererV2 content={post.content}/>
+                            <MarkdownRenderer content={post.content}/>
                         </div>
                     </motion.div>
                 </article>
