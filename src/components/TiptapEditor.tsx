@@ -3,8 +3,9 @@ import StarterKit from '@tiptap/starter-kit';
 import Link from '@tiptap/extension-link';
 import Placeholder from '@tiptap/extension-placeholder';
 import {useCallback, useEffect, useRef, useState} from 'react';
-import {mockUploadImage} from '@/lib/mockImageUpload';
+import {useImageUpload} from '@/hooks/useImageUpload';
 import {Loader2} from 'lucide-react';
+import {useToast} from '@/hooks/use-toast';
 import ImageResize from "tiptap-extension-resize-image";
 import {createTurndownService, markdownToHtml} from "@/lib/editorUtils.ts";
 import EditorToolbar from './tiptap-editor/EditorToolbar';
@@ -18,7 +19,8 @@ interface TiptapEditorProps {
 
 const TiptapEditor = ({value, onChange, height = 400}: TiptapEditorProps) => {
     const fileInputRef = useRef<HTMLInputElement>(null);
-    const [isUploading, setIsUploading] = useState(false);
+    const {uploadImage, isUploading} = useImageUpload();
+    const {toast} = useToast();
     const [isDragOver, setIsDragOver] = useState(false);
     const [linkInput, setLinkInput] = useState<{ show: boolean; url: string }>({show: false, url: ''});
     const turndownRef = useRef(createTurndownService());
@@ -86,16 +88,17 @@ const TiptapEditor = ({value, onChange, height = 400}: TiptapEditorProps) => {
 
     const handleImageUpload = useCallback(async (file: File) => {
         if (!editor) return;
-        setIsUploading(true);
         try {
-            const url = await mockUploadImage(file);
+            const url = await uploadImage(file);
             editor.chain().focus().insertContent(`<img src="${url}" alt="${file.name}" />`).run();
         } catch {
-            console.error('Image upload failed');
-        } finally {
-            setIsUploading(false);
+            toast({
+                title: 'Fout bij uploaden',
+                description: 'something went wrong while uploading your image',
+                variant: 'destructive',
+            });
         }
-    }, [editor]);
+    }, [editor, uploadImage, toast]);
 
     const handleFileSelect = useCallback(() => {
         fileInputRef.current?.click();

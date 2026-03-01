@@ -565,7 +565,6 @@
     height: auto;
     border-radius: var(--radius);
     margin: 1rem 0;
-    display: inline-block;
 }
 
 /* Image alignment in rendered content */
