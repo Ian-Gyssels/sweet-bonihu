@@ -13,9 +13,9 @@ export const markdownToHtml = (md: string): string => {
         // Links
         .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>')
         // Bold & italic
-        .replace(/\*\*\*(.+?)\*\*\*/g, '<strong><em>$1</em></strong>')
-        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
-        .replace(/\*(.+?)\*/g, '<em>$1</em>')
+        .replace(/(\*\*\*|___)(.+?)\1/g, '<strong><em>$2</em></strong>')
+        .replace(/(\*\*|__)(.+?)\1/g, '<strong>$2</strong>')
+        .replace(/(\*|_)(.+?)\1/g, '<em>$2</em>')
         // Blockquote
         .replace(/^> (.+)$/gm, '<blockquote><p>$1</p></blockquote>')
         // Inline code
