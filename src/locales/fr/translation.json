@@ -171,28 +171,28 @@
     "coffeeAlt": "Café Dolce Gusto au petit-déjeuner",
     "dietaryTitle": "Adaptations alimentaires",
     "dietaryDescription": "Nous sommes toujours heureux d'accommoder les clients qui préfèrent un petit-déjeuner végan, végétarien, sans gluten ou sans lactose. Un petit supplément s'applique, car nous voulons toujours offrir le meilleur à nos clients.",
-    "contactInfo": "Pour les allergies ou questions sur nos produits, veuillez en parler avec notre hôtesse lors du check-in, ou appelez-nous au +324/8396011.",
+    "contactInfo": "Pour les allergies ou questions sur nos produits, veuillez en parler avec notre hôtesse lors du check-in, ou appelez-nous au +32476596011.",
     "collageTitle": "Photos d'ambiance de nos hôtes",
     "collage": {
       "basket": {
-        "title": "Panier Pique-nique",
-        "desc": "Votre petit-déjeuner joliment emballé"
+        "title": "Petit-déjeuner de luxe copieux dans une chambre d'hôtes bien-être à Bruges",
+        "desc": "Votre petit-déjeuner vous sera discrètement livré dans votre suite, dans un panier de luxe – confidentialité totale garantie."
       },
       "spread": {
-        "title": "Petit-déjeuner Complet",
-        "desc": "Frais et varié, chaque matin"
+        "title": "Petit-déjeuner romantique pour couples au Sweet Bonihu",
+        "desc": "Commencez votre journée ensemble par un petit-déjeuner luxueux, dans le calme et l'intimité."
       },
       "tray": {
-        "title": "Dans Votre Chambre",
-        "desc": "Savourez en toute tranquillité"
+        "title": "Petit-déjeuner bien-être dans une chambre d'hôtes près du centre de Bruges",
+        "desc": "Savourez votre petit-déjeuner au lit ou sur votre terrasse, sans espace commun."
       },
       "continental": {
-        "title": "Sélection Salée",
-        "desc": "Fromage, jambon et œufs frais"
+        "title": "Petit-déjeuner frais pour une nuit romantique à Bruges",
+        "desc": "Un petit-déjeuner frais et copieux chaque matin, servi dans votre chambre."
       },
       "branded": {
-        "title": "Sweet Bonihu",
-        "desc": "Préparé avec amour pour nos hôtes"
+        "title": "Petit-déjeuner servi dans la suite bien-être Sweet Bonihu",
+        "desc": "Notre panier petit-déjeuner signature Sweet Bonihu incarne le luxe, la discrétion et un service personnalisé."
       }
     }
   },

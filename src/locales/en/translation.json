@@ -171,28 +171,28 @@
     "coffeeAlt": "Dolce Gusto coffee at breakfast",
     "dietaryTitle": "Dietary Adjustments",
     "dietaryDescription": "We are always happy to accommodate guests who prefer vegan, vegetarian, gluten-free or lactose-free breakfast options. A small surcharge applies, as we always want to offer the very best to our guests.",
-    "contactInfo": "For allergies or questions about our products, please speak with our hostess during check-in, or call us at +324/8396011.",
+    "contactInfo": "For allergies or questions about our products, please speak with our hostess during check-in, or call us at +32476596011.",
     "collageTitle": "Guest Photos",
     "collage": {
       "basket": {
-        "title": "Picnic Basket",
-        "desc": "Your breakfast beautifully packed"
+        "title": "Extensive luxury breakfast at a wellness B&B in Bruges",
+        "desc": "Your breakfast will be discreetly delivered to your suite in a luxury basket – complete privacy guaranteed."
       },
       "spread": {
-        "title": "Full Breakfast",
-        "desc": "Fresh and varied, every morning"
+        "title": "Romantic breakfast for couples at Sweet Bonihu",
+        "desc": "Start your day together with a luxurious breakfast in peace and privacy."
       },
       "tray": {
-        "title": "In Your Room",
-        "desc": "Enjoy in peace and comfort"
+        "title": "Wellness breakfast in B&B near Bruges center",
+        "desc": "Enjoy breakfast in bed or on your terrace – without a shared breakfast area."
       },
       "continental": {
-        "title": "Savory Selection",
-        "desc": "Cheese, ham and fresh eggs"
+        "title": "Fresh breakfast for a romantic overnight stay in Bruges",
+        "desc": "A fresh and extensive breakfast every morning, served in your own room."
       },
       "branded": {
-        "title": "Sweet Bonihu",
-        "desc": "Prepared with love for our guests"
+        "title": "Breakfast served in the Sweet Bonihu wellness suite\n",
+        "desc": "Our signature Sweet Bonihu breakfast basket represents luxury, discretion, and personalized service."
       }
     }
   },
