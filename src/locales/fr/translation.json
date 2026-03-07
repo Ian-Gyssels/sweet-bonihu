@@ -17,6 +17,10 @@
       "title": "Forfait Romantique | Arrangement Exclusif | Sweet Bonihu",
       "description": "Surprenez votre partenaire avec notre forfait romantique: champagne, fleurs, chocolat et wellness illimité. Réservez votre séjour de rêve maintenant."
     },
+    "breakfast": {
+      "title": "Petit-déjeuner Royal | Sweet Bonihu Bruges",
+      "description": "Savourez notre petit-déjeuner royal avec croissants frais, fruits de saison, plateau de fromages et plus encore. Préparé frais chaque matin."
+    },
     "contact": {
       "title": "Contact | Sweet Bonihu Bruges",
       "description": "Contactez Sweet Bonihu pour des réservations ou des questions. Nous sommes heureux de vous aider à planifier votre séjour parfait à Bruges."
@@ -31,6 +35,7 @@
     "theLoft": "Le Loft",
     "midsomer": "Midsomer",
     "romanticPackage": "Forfait Romantique",
+    "breakfast": "Petit-déjeuner",
     "blog": "Blog",
     "contact": "Contact",
     "bookNow": "Réserver"
@@ -145,6 +150,51 @@
     "priceValue": "Sur Demande",
     "priceDescription": "Les prix varient selon les dates choisies et la disponibilité. Contactez-nous pour un devis personnalisé.",
     "requestQuote": "Demander un Devis"
+  },
+  "breakfast": {
+    "heroSubtitle": "Inclus dans votre séjour",
+    "heroTitle": "Petit-déjeuner Royal",
+    "contentTitle": "Le repas le plus important de la journée",
+    "contentDescription": "Parce que le petit-déjeuner est le repas le plus important de la journée, notre hôtesse prépare pour vous un petit-déjeuner pique-nique généreux, sain et énergisant. Ainsi, nos hôtes peuvent repartir reposés pour explorer et découvrir la belle ville historique de Bruges.",
+    "contentDescriptionSecond": "Notre petit-déjeuner pique-nique comprend une variété de pains et fromages de qualité, du saumon fumé savoureux et un délicieux croissant. Vous trouverez également 3 morceaux de fruits frais, des jus, du yaourt Activia, 2 types de cornflakes Kellogg's, du Nutella, de la pâte de spéculoos et un assortiment de confitures.",
+    "includesTitle": "Ce que notre petit-déjeuner offre",
+    "includes": [
+      "Croissants frais et variétés de pain de qualité",
+      "Plateau de fromages avec sélection fine",
+      "Saumon fumé",
+      "Fruits frais de saison",
+      "Yaourt Activia & cornflakes Kellogg's",
+      "Confitures & Nutella",
+      "Café Dolce Gusto & thé",
+      "Jus de fruits frais"
+    ],
+    "coffeeAlt": "Café Dolce Gusto au petit-déjeuner",
+    "dietaryTitle": "Adaptations alimentaires",
+    "dietaryDescription": "Nous sommes toujours heureux d'accommoder les clients qui préfèrent un petit-déjeuner végan, végétarien, sans gluten ou sans lactose. Un petit supplément s'applique, car nous voulons toujours offrir le meilleur à nos clients.",
+    "contactInfo": "Pour les allergies ou questions sur nos produits, veuillez en parler avec notre hôtesse lors du check-in, ou appelez-nous au +324/8396011.",
+    "collageTitle": "Photos d'ambiance de nos hôtes",
+    "collage": {
+      "basket": {
+        "title": "Panier Pique-nique",
+        "desc": "Votre petit-déjeuner joliment emballé"
+      },
+      "spread": {
+        "title": "Petit-déjeuner Complet",
+        "desc": "Frais et varié, chaque matin"
+      },
+      "tray": {
+        "title": "Dans Votre Chambre",
+        "desc": "Savourez en toute tranquillité"
+      },
+      "continental": {
+        "title": "Sélection Salée",
+        "desc": "Fromage, jambon et œufs frais"
+      },
+      "branded": {
+        "title": "Sweet Bonihu",
+        "desc": "Préparé avec amour pour nos hôtes"
+      }
+    }
   },
   "testimonials": {
     "subtitle": "Expériences",

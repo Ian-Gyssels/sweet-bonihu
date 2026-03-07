@@ -23,6 +23,7 @@ export const useLocalizedPath = () => {
         loft: routeMappings[currentLang].loft,
         midsomer: routeMappings[currentLang].midsomer,
         romantic: routeMappings[currentLang].romantic,
+        breakfast: routeMappings[currentLang].breakfast,
         contact: routeMappings[currentLang].contact,
         blog: routeMappings[currentLang].blog,
         privacy: routeMappings[currentLang].privacy,

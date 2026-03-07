@@ -17,6 +17,10 @@
       "title": "Romantic Package | Exclusive Arrangement | Sweet Bonihu",
       "description": "Surprise your partner with our romantic package: champagne, flowers, chocolate and unlimited wellness. Book your dream stay now."
     },
+    "breakfast": {
+      "title": "Royal Breakfast | Sweet Bonihu Bruges",
+      "description": "Enjoy our extensive royal breakfast with fresh croissants, seasonal fruit, cheese platter and more. Freshly prepared every morning."
+    },
     "contact": {
       "title": "Contact | Sweet Bonihu Bruges",
       "description": "Contact Sweet Bonihu for reservations or questions. We are happy to help you plan your perfect stay in Bruges."
@@ -31,6 +35,7 @@
     "theLoft": "The Loft",
     "midsomer": "Midsomer",
     "romanticPackage": "Romantic Package",
+    "breakfast": "Breakfast",
     "blog": "Blog",
     "contact": "Contact",
     "bookNow": "Book Now"
@@ -145,6 +150,51 @@
     "priceValue": "On Request",
     "priceDescription": "Prices vary depending on the chosen dates and availability. Contact us for a personalized quote.",
     "requestQuote": "Request Quote"
+  },
+  "breakfast": {
+    "heroSubtitle": "Included in your stay",
+    "heroTitle": "Royal Breakfast",
+    "contentTitle": "The most important meal of the day",
+    "contentDescription": "Because breakfast is the most important meal of the day, our hostess prepares a generous, healthy and energizing picnic breakfast for you. This way, our guests can head out refreshed to explore and discover the beautiful historic Bruges.",
+    "contentDescriptionSecond": "Our picnic breakfast includes a variety of delicious quality breads and cheeses, savory smoked salmon and a delicious croissant. You'll also find 3 pieces of fresh fruit, juices, Activia yoghurt, 2 types of Kellogg's cornflakes, Nutella, speculoos spread and an assortment of jams.",
+    "includesTitle": "What our breakfast offers",
+    "includes": [
+      "Fresh croissants and quality bread varieties",
+      "Cheese platter with fine selection",
+      "Smoked salmon",
+      "Fresh seasonal fruit",
+      "Activia yoghurt & Kellogg's cornflakes",
+      "Jams & Nutella",
+      "Dolce Gusto coffee & tea",
+      "Fresh fruit juices"
+    ],
+    "coffeeAlt": "Dolce Gusto coffee at breakfast",
+    "dietaryTitle": "Dietary Adjustments",
+    "dietaryDescription": "We are always happy to accommodate guests who prefer vegan, vegetarian, gluten-free or lactose-free breakfast options. A small surcharge applies, as we always want to offer the very best to our guests.",
+    "contactInfo": "For allergies or questions about our products, please speak with our hostess during check-in, or call us at +324/8396011.",
+    "collageTitle": "Guest Photos",
+    "collage": {
+      "basket": {
+        "title": "Picnic Basket",
+        "desc": "Your breakfast beautifully packed"
+      },
+      "spread": {
+        "title": "Full Breakfast",
+        "desc": "Fresh and varied, every morning"
+      },
+      "tray": {
+        "title": "In Your Room",
+        "desc": "Enjoy in peace and comfort"
+      },
+      "continental": {
+        "title": "Savory Selection",
+        "desc": "Cheese, ham and fresh eggs"
+      },
+      "branded": {
+        "title": "Sweet Bonihu",
+        "desc": "Prepared with love for our guests"
+      }
+    }
   },
   "testimonials": {
     "subtitle": "Experiences",

@@ -10,7 +10,7 @@ interface SEOHeadProps {
     descriptionKey?: string;
     title?: string;
     description?: string;
-    pageKey: 'home' | 'loft' | 'midsomer' | 'romantic' | 'contact' | 'blog' | 'privacy';
+    pageKey: 'home' | 'loft' | 'midsomer' | 'romantic' | 'breakfast' | 'contact' | 'blog' | 'privacy';
 }
 
 // Map page keys to their respective OG images (using public path for absolute URLs)
@@ -18,6 +18,7 @@ const pageImages: Record<SEOHeadProps['pageKey'], string> = {
     home: '/og-image.jpg',
     loft: '/og-image.jpg',
     midsomer: '/og-image.jpg',
+    breakfast: '/og-image.jpg',
     romantic: '/og-image.jpg',
     contact: '/og-image.jpg',
     blog: '/og-image.jpg',
@@ -41,7 +42,8 @@ const SEOHead = ({titleKey, descriptionKey, title, description, pageKey}: SEOHea
             : pageKey === 'midsomer' ? 'midsomer'
                 : pageKey === 'romantic' ? 'romantic'
                     : pageKey === 'privacy' ? 'privacy'
-                        : 'contact';
+                        : pageKey === 'breakfast' ? 'breakfast'
+                            : 'contact';
 
     // Generate hreflang URLs
     const hreflangUrls = languages.map(lang => ({
