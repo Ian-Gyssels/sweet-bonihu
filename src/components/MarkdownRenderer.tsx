@@ -7,7 +7,7 @@ interface MarkdownRendererProps {
 
 const PURIFY_CONFIG = {
     ALLOWED_TAGS: ['h1', 'h2', 'h3', 'p', 'a', 'img', 'strong', 'em', 'ul', 'ol', 'li', 'blockquote', 'pre', 'code', 'br', 'hr'],
-    ALLOWED_ATTR: ['href', 'src', 'alt', 'target', 'rel', 'loading', 'class', 'width', 'height', 'style'],
+    ALLOWED_ATTR: ['href', 'src', 'alt', 'target', 'rel', 'loading', 'class', 'width', 'height', 'style', 'align'],
 };
 
 /**

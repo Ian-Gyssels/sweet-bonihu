@@ -6,10 +6,10 @@ import {useCallback, useEffect, useRef, useState} from 'react';
 import {useImageUpload} from '@/hooks/useImageUpload';
 import {Loader2} from 'lucide-react';
 import {useToast} from '@/hooks/use-toast';
-import ImageResize from "tiptap-extension-resize-image";
 import {createTurndownService, markdownToHtml} from "@/lib/editorUtils.ts";
 import EditorToolbar from './tiptap-editor/EditorToolbar';
 import LinkInputBar from './tiptap-editor/LinkInputBar';
+import {CustomImage} from "@/lib/CustomImage.tsx";
 
 interface TiptapEditorProps {
     value: string;
@@ -31,7 +31,7 @@ const TiptapEditor = ({value, onChange, height = 400}: TiptapEditorProps) => {
             StarterKit.configure({
                 heading: {levels: [1, 2, 3]},
             }),
-            ImageResize,
+            CustomImage,
             Link.configure({
                 openOnClick: false,
                 autolink: true,

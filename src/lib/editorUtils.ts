@@ -56,33 +56,47 @@ export const markdownToHtml = (md: string): string => {
 };
 
 // Configure turndown for HTML-to-Markdown
+function deriveAlignFromContainerStyle(containerStyle: string | null | undefined): 'left' | 'center' | 'right' {
+    if (!containerStyle) return 'left'
+
+    const s = containerStyle.toLowerCase().replace(/\s/g, '')
+
+    if (s.includes('margin:0pxauto0px0px')) return 'left'
+    if (s.includes('margin:0px0px0pxauto')) return 'right'
+    if (s.includes('margin:0pxauto')) return 'center'
+
+    return 'left'
+}
+
 export const createTurndownService = () => {
     const td = new TurndownService({
         headingStyle: 'atx',
         codeBlockStyle: 'fenced',
         bulletListMarker: '-',
-    });
+    })
 
-    // Custom image rule to ensure clean markdown
-    td.addRule('image', {
+    td.addRule('imageWithAlign', {
         filter: 'img',
-        replacement: (_content, node) => {
-            const el = node as HTMLImageElement;
-            const alt = el.getAttribute('alt') || '';
-            const src = el.getAttribute('src') || '';
-            const width = el.getAttribute('width') || el.style.width;
-            const height = el.getAttribute('height') || el.style.height;
+        replacement: (content, node) => {
+            const img = node as HTMLImageElement
+            const alt = img.getAttribute('alt') || ''
+            const src = img.getAttribute('src') || ''
+            const width = img.getAttribute('width') || img.style.width
+            const height = img.getAttribute('height') || img.style.height
+            const containerStyle = img.getAttribute('containerstyle') || ''
 
-            if (width || height) {
-                const attrs = [`src="${src}"`, `alt="${alt}"`];
-                if (width) attrs.push(`width="${width}"`);
-                if (height) attrs.push(`height="${height}"`);
-                return `<img ${attrs.join(' ')} />`;
-            }
+            const align = deriveAlignFromContainerStyle(containerStyle)
 
-            return `![${alt}](${src})`;
+            const attrs: string[] = []
+            attrs.push(`src="${src}"`)
+            attrs.push(`alt="${alt}"`)
+            if (width) attrs.push(`width="${width}"`)
+            if (height) attrs.push(`height="${height}"`)
+            attrs.push(`data-align="${align}"`)
+
+            return `<img ${attrs.join(' ')} />`
         },
-    });
+    })
 
-    return td;
-};
+    return td
+}

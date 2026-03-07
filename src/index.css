@@ -570,16 +570,13 @@
 /* Image alignment in rendered content */
 .prose-content img[style*="float: left"],
 .prose-content img[data-align="left"] {
-    float: left;
-    margin-right: 1.5rem;
-    margin-bottom: 0.5rem;
+    display: block;
 }
 
 .prose-content img[style*="float: right"],
 .prose-content img[data-align="right"] {
-    float: right;
-    margin-left: 1.5rem;
-    margin-bottom: 0.5rem;
+    display: block;
+    margin-left: auto;
 }
 
 .prose-content img[style*="margin: 0 auto"],
