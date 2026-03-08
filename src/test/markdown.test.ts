@@ -94,7 +94,7 @@ describe('createTurndownService', () => {
     });
 
     it('should handle images without dimensions', () => {
-        expect(turndown.turndown('<img src="img.png" alt="alt" />')).toBe('![alt](img.png)');
+        expect(turndown.turndown('<img src="img.png" alt="alt" />')).toBe('<img src="img.png" alt="alt" data-align="left" />');
     });
 
     it('should handle images with width/height attributes', () => {
@@ -105,7 +105,7 @@ describe('createTurndownService', () => {
         img.setAttribute('alt', 'alt');
         img.setAttribute('width', '100');
 
-        expect(turndown.turndown(img.outerHTML)).toBe('<img src="img.png" alt="alt" width="100" />');
+        expect(turndown.turndown(img.outerHTML)).toBe('<img src="img.png" alt="alt" width="100" data-align="left" />');
     });
 
     it('should handle images with style dimensions', () => {
@@ -114,6 +114,38 @@ describe('createTurndownService', () => {
         img.setAttribute('src', 'img.png');
         img.style.width = '200px';
 
-        expect(turndown.turndown(img.outerHTML)).toBe('<img src="img.png" alt="" width="200px" />');
+        expect(turndown.turndown(img.outerHTML)).toBe('<img src="img.png" alt="" width="200px" data-align="left" />');
+    });
+
+    // update tests with div wrapper for data align
+    it('should handle images with left alignment', () => {
+        const dom = new JSDOM.JSDOM();
+        const div = dom.window.document.createElement('div');
+        div.setAttribute('style', 'margin: 0px auto 0px 0px');
+        const img = dom.window.document.createElement('img');
+        img.setAttribute('src', 'img.png');
+        div.appendChild(img);
+        // The service expects containerstyle on the img itself based on current logic
+        img.setAttribute('containerstyle', 'margin: 0px auto 0px 0px');
+
+        expect(turndown.turndown(img.outerHTML)).toBe('<img src="img.png" alt="" data-align="left" />');
+    });
+
+    it('should handle images with center alignment', () => {
+        const dom = new JSDOM.JSDOM();
+        const img = dom.window.document.createElement('img');
+        img.setAttribute('src', 'img.png');
+        img.setAttribute('containerstyle', 'margin: 0px auto');
+
+        expect(turndown.turndown(img.outerHTML)).toBe('<img src="img.png" alt="" data-align="center" />');
+    });
+
+    it('should handle images with right alignment', () => {
+        const dom = new JSDOM.JSDOM();
+        const img = dom.window.document.createElement('img');
+        img.setAttribute('src', 'img.png');
+        img.setAttribute('containerstyle', 'margin: 0px 0px 0px auto');
+
+        expect(turndown.turndown(img.outerHTML)).toBe('<img src="img.png" alt="" data-align="right" />');
     });
 });
