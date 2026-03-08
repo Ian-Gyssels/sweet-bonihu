@@ -28,6 +28,18 @@
     "blog": {
       "title": "Blog | Sweet Bonihu",
       "description": "Discover tips about Bruges, wellness and news from Sweet Bonihu. Inspiration for your perfect stay."
+    },
+    "booking": {
+      "title": "Book Your Stay | Sweet Bonihu Bruges",
+      "description": "Reserve your luxury wellness stay at Sweet Bonihu in Bruges. Book directly for the best rates.",
+      "loft": {
+        "title": "Book The Loft | Sweet Bonihu Bruges",
+        "description": "Reserve The Loft wellness suite with private jacuzzi and infrared sauna at Sweet Bonihu."
+      },
+      "midsomer": {
+        "title": "Book Midsomer | Sweet Bonihu Bruges",
+        "description": "Reserve the cozy Midsomer room at Sweet Bonihu in Bruges."
+      }
     }
   },
   "nav": {
@@ -275,6 +287,9 @@
     "backToBlog": "Back to Blog",
     "relatedPosts": "Related Articles",
     "noResults": "No articles found."
+  },
+  "booking": {
+    "redirect": "Redirecting to booking..."
   },
   "notFound": {
     "title": "404",

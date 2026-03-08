@@ -28,6 +28,18 @@
     "blog": {
       "title": "Blog | Sweet Bonihu",
       "description": "Ontdek tips over Brugge, wellness en nieuws van Sweet Bonihu. Inspiratie voor uw perfecte verblijf."
+    },
+    "booking": {
+      "title": "Boek Uw Verblijf | Sweet Bonihu Brugge",
+      "description": "Reserveer uw luxe wellnessverblijf bij Sweet Bonihu in Brugge. Boek rechtstreeks voor de beste tarieven.",
+      "loft": {
+        "title": "Boek The Loft | Sweet Bonihu Brugge",
+        "description": "Reserveer The Loft wellness suite met privé jacuzzi en infraroodsauna bij Sweet Bonihu."
+      },
+      "midsomer": {
+        "title": "Boek Midsomer | Sweet Bonihu Brugge",
+        "description": "Reserveer de gezellige Midsomer kamer bij Sweet Bonihu in Brugge."
+      }
     }
   },
   "nav": {
@@ -275,6 +287,9 @@
     "backToBlog": "Terug naar Blog",
     "relatedPosts": "Gerelateerde Artikelen",
     "noResults": "Geen artikelen gevonden."
+  },
+  "booking": {
+    "redirect": "Doorverwijzen naar boeking..."
   },
   "notFound": {
     "title": "404",
