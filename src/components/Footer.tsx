@@ -39,6 +39,10 @@ const Footer = () => {
                                   className="font-sans text-sm text-background/70 hover:text-background transition-colors">
                                 {t('nav.romanticPackage')}
                             </Link>
+                            <Link to={paths.breakfast}
+                                  className="font-sans text-sm text-background/70 hover:text-background transition-colors">
+                                {t('nav.breakfast')}
+                            </Link>
                             <Link to={paths.blog}
                                   className="font-sans text-sm text-background/70 hover:text-background transition-colors">
                                 {t('nav.blog')}

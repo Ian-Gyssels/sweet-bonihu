@@ -20,6 +20,7 @@ const Header = () => {
         {name: t('nav.theLoft'), path: paths.loft},
         {name: t('nav.midsomer'), path: paths.midsomer},
         {name: t('nav.romanticPackage'), path: paths.romantic},
+        {name: t('nav.breakfast'), path: paths.breakfast},
         {name: t('nav.blog'), path: paths.blog},
         {name: t('nav.contact'), path: paths.contact},
     ];

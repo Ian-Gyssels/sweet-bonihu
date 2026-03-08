@@ -17,6 +17,10 @@
       "title": "Romantic Package | Exclusive Arrangement | Sweet Bonihu",
       "description": "Surprise your partner with our romantic package: champagne, flowers, chocolate and unlimited wellness. Book your dream stay now."
     },
+    "breakfast": {
+      "title": "Royal Breakfast | Sweet Bonihu Bruges",
+      "description": "Enjoy our extensive royal breakfast with fresh croissants, seasonal fruit, cheese platter and more. Freshly prepared every morning."
+    },
     "contact": {
       "title": "Contact | Sweet Bonihu Bruges",
       "description": "Contact Sweet Bonihu for reservations or questions. We are happy to help you plan your perfect stay in Bruges."
@@ -31,6 +35,7 @@
     "theLoft": "The Loft",
     "midsomer": "Midsomer",
     "romanticPackage": "Romantic Package",
+    "breakfast": "Breakfast",
     "blog": "Blog",
     "contact": "Contact",
     "bookNow": "Book Now"
@@ -145,6 +150,51 @@
     "priceValue": "On Request",
     "priceDescription": "Prices vary depending on the chosen dates and availability. Contact us for a personalized quote.",
     "requestQuote": "Request Quote"
+  },
+  "breakfast": {
+    "heroSubtitle": "Included in your stay",
+    "heroTitle": "Royal Breakfast",
+    "contentTitle": "The most important meal of the day",
+    "contentDescription": "Because breakfast is the most important meal of the day, our hostess prepares a generous, healthy and energizing picnic breakfast for you. This way, our guests can head out refreshed to explore and discover the beautiful historic Bruges.",
+    "contentDescriptionSecond": "The picnic breakfast includes a variety of quality meats and cheeses, smoked salmon and a delicious omelette. It also features 3 pieces of fresh seasonal fruit, Activia yogurt, 2 types of Kellogg’s cornflakes, Nutella, speculoos spread and an assortment of jams. Everything is served with baguette, croissants and sandwiches, along with fresh apple juice from Sint-Kruis, milk and Dolce Gusto coffee or decaf.",
+    "includesTitle": "What our breakfast offers",
+    "includes": [
+      "Fresh croissants and quality bread varieties",
+      "Cheese platter with fine selection",
+      "Smoked salmon",
+      "Fresh seasonal fruit",
+      "Activia yoghurt & Kellogg's cornflakes",
+      "Jams & Nutella",
+      "Dolce Gusto coffee & tea",
+      "Fresh fruit juices"
+    ],
+    "coffeeAlt": "Dolce Gusto coffee at breakfast",
+    "dietaryTitle": "Dietary Adjustments",
+    "dietaryDescription": "We are always happy to accommodate guests who prefer vegan, vegetarian, gluten-free or lactose-free breakfast options. A small surcharge applies, as we always want to offer the very best to our guests.",
+    "contactInfo": "For allergies or questions about our products, please speak with our hostess during check-in, or call us at +32476596011.",
+    "collageTitle": "Guest Photos",
+    "collage": {
+      "basket": {
+        "title": "Extensive luxury breakfast at a wellness B&B in Bruges",
+        "desc": "Your breakfast will be discreetly delivered to your suite in a luxury basket – complete privacy guaranteed."
+      },
+      "spread": {
+        "title": "Romantic breakfast for couples at Sweet Bonihu",
+        "desc": "Start your day together with a luxurious breakfast in peace and privacy."
+      },
+      "tray": {
+        "title": "Wellness breakfast in B&B near Bruges center",
+        "desc": "Enjoy breakfast in bed or on your terrace – without a shared breakfast area."
+      },
+      "continental": {
+        "title": "Fresh breakfast for a romantic overnight stay in Bruges",
+        "desc": "A fresh and extensive breakfast every morning, served in your own room."
+      },
+      "branded": {
+        "title": "Breakfast served in the Sweet Bonihu wellness suite\n",
+        "desc": "Our signature Sweet Bonihu breakfast basket represents luxury, discretion, and personalized service."
+      }
+    }
   },
   "testimonials": {
     "subtitle": "Experiences",

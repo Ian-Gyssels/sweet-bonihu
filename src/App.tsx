@@ -22,6 +22,7 @@ import {ConsentProvider} from "./contexts/ConsentContext";
 import ProtectedRoute from "@/components/ProtectedRoute.tsx";
 import ConsentBanner from "@/components/ConsentBanner";
 import PageTracker from "@/components/PageTracker";
+import Breakfast from "@/pages/Breakfast.tsx";
 
 const queryClient = new QueryClient();
 
@@ -41,6 +42,7 @@ const App = () => (
                                 <Route path="/de-loft" element={<DeLoft/>}/>
                                 <Route path="/midsomer" element={<Midsomer/>}/>
                                 <Route path="/romantisch-pakket" element={<RomantischPakket/>}/>
+                                <Route path="/ontbijt" element={<Breakfast/>}/>
                                 <Route path="/contact" element={<Contact/>}/>
                                 <Route path="/privacy-policy" element={<PrivacyPolicy/>}/>
                                 <Route path="/blog" element={<Blog/>}/>
@@ -51,6 +53,7 @@ const App = () => (
                                 <Route path="/en/the-loft" element={<DeLoft/>}/>
                                 <Route path="/en/midsomer" element={<Midsomer/>}/>
                                 <Route path="/en/romantic-package" element={<RomantischPakket/>}/>
+                                <Route path="/en/breakfast" element={<Breakfast/>}/>
                                 <Route path="/en/contact" element={<Contact/>}/>
                                 <Route path="/en/privacy-policy" element={<PrivacyPolicy/>}/>
                                 <Route path="/en/blog" element={<Blog/>}/>
@@ -61,6 +64,7 @@ const App = () => (
                                 <Route path="/fr/le-loft" element={<DeLoft/>}/>
                                 <Route path="/fr/midsomer" element={<Midsomer/>}/>
                                 <Route path="/fr/forfait-romantique" element={<RomantischPakket/>}/>
+                                <Route path="/fr/petit-dejeuner" element={<Breakfast/>}/>
                                 <Route path="/fr/contact" element={<Contact/>}/>
                                 <Route path="/fr/politique-de-confidentialite" element={<PrivacyPolicy/>}/>
                                 <Route path="/fr/blog" element={<Blog/>}/>
