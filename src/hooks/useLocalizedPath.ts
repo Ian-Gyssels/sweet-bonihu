@@ -27,6 +27,9 @@ export const useLocalizedPath = () => {
         contact: routeMappings[currentLang].contact,
         blog: routeMappings[currentLang].blog,
         privacy: routeMappings[currentLang].privacy,
+        booking: routeMappings[currentLang].booking,
+        bookingLoft: routeMappings[currentLang].bookingLoft,
+        bookingMidsomer: routeMappings[currentLang].bookingMidsomer,
         // Admin paths (not language-specific)
         adminLogin: '/admin/login',
         adminBlog: '/admin/blog',

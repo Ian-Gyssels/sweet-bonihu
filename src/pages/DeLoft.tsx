@@ -8,11 +8,15 @@ import {useTranslation} from "react-i18next";
 import {useLanguageSync} from "@/hooks/useLanguageSync";
 import roomLoft from "@/assets/hero/hero-loft.jpg";
 import PageHero from "@/components/PageHero.tsx";
+import {Link} from "react-router-dom";
+import useLocalizedPath from "@/hooks/useLocalizedPath.ts";
 
 const DeLoft = () => {
     useLanguageSync();
     const {t} = useTranslation();
     const amenities = t('rooms.loft.amenities', {returnObjects: true}) as string[];
+    const {getPaths} = useLocalizedPath();
+    const paths = getPaths();
 
     return (
         <div className="min-h-screen bg-background font-sans">
@@ -59,10 +63,9 @@ const DeLoft = () => {
                                     {t('rooms.loft.contentDescriptionSecond')}
                                 </motion.p>
                                 <Button size="lg" asChild>
-                                    <a href="https://www.wellnesssweetbonihu.com/" target="_blank"
-                                       rel="noopener noreferrer">
+                                    <Link to={paths.bookingLoft}>
                                         {t('rooms.loft.reserveButton')}
-                                    </a>
+                                    </Link>
                                 </Button>
                             </div>
 

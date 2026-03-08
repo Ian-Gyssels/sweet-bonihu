@@ -51,9 +51,9 @@ const Header = () => {
                 <div className="hidden lg:flex items-center gap-4">
                     <LanguageSwitcher/>
                     <Button asChild>
-                        <a href="https://www.wellnesssweetbonihu.com/" target="_blank" rel="noopener noreferrer">
+                        <Link to={paths.booking}>
                             {t('nav.bookNow')}
-                        </a>
+                        </Link>
                     </Button>
                 </div>
 

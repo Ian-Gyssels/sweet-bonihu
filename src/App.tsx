@@ -23,6 +23,7 @@ import ProtectedRoute from "@/components/ProtectedRoute.tsx";
 import ConsentBanner from "@/components/ConsentBanner";
 import PageTracker from "@/components/PageTracker";
 import Breakfast from "@/pages/Breakfast.tsx";
+import Booking from "./pages/Booking";
 
 const queryClient = new QueryClient();
 
@@ -47,6 +48,9 @@ const App = () => (
                                 <Route path="/privacy-policy" element={<PrivacyPolicy/>}/>
                                 <Route path="/blog" element={<Blog/>}/>
                                 <Route path="/blog/:slug" element={<BlogPostPage/>}/>
+                                <Route path="/boeken" element={<Booking/>}/>
+                                <Route path="/boeken/de-loft" element={<Booking room="loft"/>}/>
+                                <Route path="/boeken/midsomer" element={<Booking room="midsomer"/>}/>
 
                                 {/* English - /en prefix */}
                                 <Route path="/en" element={<Index/>}/>
@@ -58,6 +62,9 @@ const App = () => (
                                 <Route path="/en/privacy-policy" element={<PrivacyPolicy/>}/>
                                 <Route path="/en/blog" element={<Blog/>}/>
                                 <Route path="/en/blog/:slug" element={<BlogPostPage/>}/>
+                                <Route path="/en/book" element={<Booking/>}/>
+                                <Route path="/en/book/the-loft" element={<Booking room="loft"/>}/>
+                                <Route path="/en/book/midsomer" element={<Booking room="midsomer"/>}/>
 
                                 {/* French - /fr prefix */}
                                 <Route path="/fr" element={<Index/>}/>
@@ -69,6 +76,9 @@ const App = () => (
                                 <Route path="/fr/politique-de-confidentialite" element={<PrivacyPolicy/>}/>
                                 <Route path="/fr/blog" element={<Blog/>}/>
                                 <Route path="/fr/blog/:slug" element={<BlogPostPage/>}/>
+                                <Route path="/fr/reserver" element={<Booking/>}/>
+                                <Route path="/fr/reserver/le-loft" element={<Booking room="loft"/>}/>
+                                <Route path="/fr/reserver/midsomer" element={<Booking room="midsomer"/>}/>
 
                                 {/* Admin routes */}
                                 <Route path="/admin/login" element={<AdminLogin/>}/>

@@ -26,6 +26,9 @@ export const routeMappings: Record<LanguageCode, Record<string, string>> = {
         contact: '/contact',
         blog: '/blog',
         privacy: '/privacy-policy',
+        booking: '/boeken',
+        bookingLoft: '/boeken/de-loft',
+        bookingMidsomer: '/boeken/midsomer',
     },
     en: {
         home: '/en',
@@ -36,6 +39,9 @@ export const routeMappings: Record<LanguageCode, Record<string, string>> = {
         contact: '/en/contact',
         blog: '/en/blog',
         privacy: '/en/privacy-policy',
+        booking: '/en/book',
+        bookingLoft: '/en/book/the-loft',
+        bookingMidsomer: '/en/book/midsomer',
     },
     fr: {
         home: '/fr',
@@ -46,6 +52,9 @@ export const routeMappings: Record<LanguageCode, Record<string, string>> = {
         contact: '/fr/contact',
         blog: '/fr/blog',
         privacy: '/fr/politique-de-confidentialite',
+        booking: '/fr/reserver',
+        bookingLoft: '/fr/reserver/le-loft',
+        bookingMidsomer: '/fr/reserver/midsomer',
     },
 };
 

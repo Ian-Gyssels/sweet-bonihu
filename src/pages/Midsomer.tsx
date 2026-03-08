@@ -8,11 +8,15 @@ import {useTranslation} from "react-i18next";
 import {useLanguageSync} from "@/hooks/useLanguageSync";
 import roomMidsomer from "@/assets/hero/hero-midsommer.jpg";
 import PageHero from "@/components/PageHero.tsx";
+import {Link} from "react-router-dom";
+import useLocalizedPath from "@/hooks/useLocalizedPath.ts";
 
 const Midsomer = () => {
     useLanguageSync();
     const {t} = useTranslation();
     const amenities = t('rooms.midsomer.amenities', {returnObjects: true}) as string[];
+    const {getPaths} = useLocalizedPath();
+    const paths = getPaths();
 
     return (
         <div className="min-h-screen bg-background font-sans">
@@ -71,10 +75,9 @@ const Midsomer = () => {
                                     </p>
                                 </motion.div>
                                 <Button size="lg" asChild>
-                                    <a href="https://www.wellnesssweetbonihu.com/" target="_blank"
-                                       rel="noopener noreferrer">
+                                    <Link to={paths.bookingMidsomer}>
                                         {t('rooms.midsomer.reserveButton')}
-                                    </a>
+                                    </Link>
                                 </Button>
                             </div>
 
