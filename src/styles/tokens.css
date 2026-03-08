@@ -1,0 +1,52 @@
+@layer base {
+    :root {
+        --background: 40 15% 97%;
+        --foreground: 30 10% 15%;
+
+        --card: 40 20% 99%;
+        --card-foreground: 30 10% 15%;
+
+        --popover: 40 20% 99%;
+        --popover-foreground: 30 10% 15%;
+
+        --primary: 38 35% 55%;
+        --primary-foreground: 40 15% 97%;
+
+        --secondary: 30 8% 35%;
+        --secondary-foreground: 40 15% 97%;
+
+        --muted: 35 15% 92%;
+        --muted-foreground: 30 8% 45%;
+
+        --accent: 38 35% 55%;
+        --accent-foreground: 40 15% 97%;
+
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 210 40% 98%;
+
+        --border: 35 15% 88%;
+        --input: 35 15% 88%;
+        --ring: 38 35% 55%;
+
+        --radius: 0.25rem;
+
+        /* Custom Luxury Tokens */
+        --champagne: 38 35% 55%;
+        --champagne-light: 38 40% 75%;
+        --taupe: 30 8% 35%;
+        --taupe-light: 30 10% 65%;
+        --charcoal: 30 10% 15%;
+        --cream: 40 30% 96%;
+        --ivory: 45 30% 98%;
+    }
+}
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+    }
+}
