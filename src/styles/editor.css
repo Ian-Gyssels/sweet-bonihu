@@ -1,0 +1,311 @@
+/* Tiptap Editor Styles */
+.tiptap-wrapper {
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    background: hsl(var(--background));
+    overflow: hidden;
+    position: relative;
+    transition: border-color 0.2s ease;
+}
+
+.tiptap-wrapper:focus-within {
+    border-color: hsl(var(--ring));
+}
+
+.tiptap-wrapper.drag-over {
+    border-color: hsl(var(--primary));
+    box-shadow: 0 0 0 2px hsl(var(--primary) / 0.15);
+}
+
+.tiptap-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    padding: 6px 8px;
+    background: hsl(var(--muted));
+    border-bottom: 1px solid hsl(var(--border));
+    flex-wrap: wrap;
+}
+
+.tiptap-toolbar-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: var(--radius);
+    color: hsl(var(--muted-foreground));
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.tiptap-toolbar-btn:hover {
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+}
+
+.tiptap-toolbar-btn.is-active {
+    background: hsl(var(--primary));
+    color: hsl(var(--primary-foreground));
+}
+
+.tiptap-toolbar-divider {
+    width: 1px;
+    height: 20px;
+    background: hsl(var(--border));
+    margin: 0 4px;
+}
+
+.tiptap-content {
+    padding: 16px;
+    overflow-y: auto;
+}
+
+.tiptap-content .tiptap {
+    outline: none;
+    font-family: var(--font-sans, "Montserrat", system-ui, sans-serif);
+    font-size: 1rem;
+    line-height: 1.7;
+    color: hsl(var(--foreground));
+}
+
+.tiptap-content .tiptap p {
+    margin-bottom: 0.75rem;
+}
+
+.tiptap-content .tiptap h1,
+.tiptap-content .tiptap h2,
+.tiptap-content .tiptap h3 {
+    font-family: "Cormorant Garamond", serif;
+    color: hsl(var(--foreground));
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+}
+
+.tiptap-content .tiptap h1 {
+    font-size: 1.75rem;
+}
+
+.tiptap-content .tiptap h2 {
+    font-size: 1.5rem;
+}
+
+.tiptap-content .tiptap h3 {
+    font-size: 1.25rem;
+}
+
+.tiptap-content .tiptap ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.tiptap-content .tiptap ol {
+    list-style-type: decimal;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.tiptap-content .tiptap li {
+    margin-bottom: 0.25rem;
+}
+
+.tiptap-content .tiptap blockquote {
+    border-left: 3px solid hsl(var(--primary));
+    padding-left: 1rem;
+    margin: 1rem 0;
+    font-style: italic;
+    color: hsl(var(--muted-foreground));
+}
+
+.tiptap-content .tiptap a {
+    color: hsl(var(--primary));
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.tiptap-content .tiptap img {
+    max-width: 100%;
+    height: auto;
+    border-radius: var(--radius);
+    margin: 1rem 0;
+    cursor: default;
+    display: inline-block;
+}
+
+/* Image alignment in Tiptap editor */
+.tiptap-content .tiptap .image-resizer[data-align="left"] {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.tiptap-content .tiptap .image-resizer[data-align="right"] {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.tiptap-content .tiptap .image-resizer[data-align="center"] {
+    display: flex;
+    justify-content: center;
+}
+
+/* tiptap-extension-resize-image styles */
+.tiptap-content .tiptap .image-resizer {
+    display: inline-flex;
+    position: relative;
+    flex-grow: 0;
+    margin: 0.5rem 0;
+}
+
+.tiptap-content .tiptap .image-resizer img {
+    display: block;
+    margin: 0;
+    border-radius: var(--radius);
+    box-shadow: 0 2px 8px hsl(var(--foreground) / 0.06);
+    transition: box-shadow 0.2s ease;
+}
+
+.tiptap-content .tiptap .image-resizer:hover img {
+    box-shadow: 0 4px 16px hsl(var(--foreground) / 0.1);
+}
+
+.tiptap-content .tiptap .image-resizer .image-resizer-handle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: hsl(var(--primary));
+    border: 2px solid hsl(var(--background));
+    border-radius: 50%;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+}
+
+.tiptap-content .tiptap .image-resizer:hover .image-resizer-handle,
+.tiptap-content .tiptap .image-resizer.resizing .image-resizer-handle {
+    opacity: 1;
+}
+
+.tiptap-content .tiptap .image-resizer .image-resizer-handle.image-resizer-handle-ne {
+    top: -5px;
+    right: -5px;
+    cursor: nesw-resize;
+}
+
+.tiptap-content .tiptap .image-resizer .image-resizer-handle.image-resizer-handle-nw {
+    top: -5px;
+    left: -5px;
+    cursor: nwse-resize;
+}
+
+.tiptap-content .tiptap .image-resizer .image-resizer-handle.image-resizer-handle-se {
+    bottom: -5px;
+    right: -5px;
+    cursor: nwse-resize;
+}
+
+.tiptap-content .tiptap .image-resizer .image-resizer-handle.image-resizer-handle-sw {
+    bottom: -5px;
+    left: -5px;
+    cursor: nesw-resize;
+}
+
+/* Selected image outline */
+.tiptap-content .tiptap .image-resizer.resizing img,
+.tiptap-content .tiptap img.ProseMirror-selectednode {
+    outline: 2px solid hsl(var(--primary));
+    outline-offset: 2px;
+}
+
+.tiptap-content .tiptap code {
+    background: hsl(var(--muted));
+    padding: 0.125rem 0.375rem;
+    border-radius: 0.25rem;
+    font-size: 0.875em;
+}
+
+.tiptap-content .tiptap p.is-editor-empty:first-child::before {
+    content: attr(data-placeholder);
+    float: left;
+    color: hsl(var(--muted-foreground));
+    pointer-events: none;
+    height: 0;
+}
+
+/* Image alignment in rendered content */
+
+.tiptap-content .tiptap img[data-align="left"] {
+    display: block;
+    margin-left: 0;
+    margin-right: auto;
+}
+
+
+.tiptap-content .tiptap img[data-align="right"] {
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.tiptap-content .tiptap img[data-align="center"] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tiptap-link-input {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 6px 8px;
+    border-top: 1px solid hsl(var(--border));
+    background: hsl(var(--muted));
+}
+
+.tiptap-link-input input {
+    flex: 1;
+    padding: 4px 8px;
+    font-size: 13px;
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+    outline: none;
+}
+
+.tiptap-link-input input:focus {
+    border-color: hsl(var(--primary));
+}
+
+.tiptap-upload-overlay {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    border-radius: var(--radius);
+    box-shadow: 0 2px 8px hsl(var(--foreground) / 0.08);
+    z-index: 10;
+}
+
+.tiptap-source-viewer {
+    margin: 0;
+    padding: 12px 16px;
+    background: hsl(var(--muted));
+    border-top: 1px solid hsl(var(--border));
+    font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, monospace;
+    font-size: 12px;
+    line-height: 1.5;
+    color: hsl(var(--muted-foreground));
+    overflow: auto;
+    white-space: pre-wrap;
+    word-break: break-all;
+    border-radius: 0 0 var(--radius) var(--radius);
+}
