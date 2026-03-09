@@ -56,16 +56,22 @@ export const markdownToHtml = (md: string): string => {
 };
 
 // Configure turndown for HTML-to-Markdown
-function deriveAlignFromContainerStyle(containerStyle: string | null | undefined): 'left' | 'center' | 'right' {
-    if (!containerStyle) return 'left'
+function deriveAlignFromContainerStyle(containerStyle: string | null | undefined): 'left' | 'center' | 'right' | null {
+    if (!containerStyle) return null
 
     const s = containerStyle.toLowerCase().replace(/\s/g, '')
 
-    if (s.includes('margin:0pxauto0px0px')) return 'left'
-    if (s.includes('margin:0px0px0pxauto')) return 'right'
-    if (s.includes('margin:0pxauto')) return 'center'
+    // Package uses margin shorthand; browser may output with or without "px"
+    if (s.includes('margin:0pxauto0px0px') || s.includes('margin:0auto00')) return 'left'
+    if (s.includes('margin:0px0px0pxauto') || s.includes('margin:000auto')) return 'right'
+    if (s.includes('margin:0pxauto') || s.includes('margin:0auto')) return 'center'
 
-    return 'left'
+    // CustomImage uses margin-left/margin-right
+    if (s.includes('margin-left:auto') && s.includes('margin-right:0')) return 'right'
+    if (s.includes('margin-left:0') && s.includes('margin-right:auto')) return 'left'
+    if (s.includes('margin-left:auto') && s.includes('margin-right:auto')) return 'center'
+
+    return null
 }
 
 export const createTurndownService = () => {
@@ -84,8 +90,13 @@ export const createTurndownService = () => {
             const width = img.getAttribute('width') || img.style.width
             const height = img.getAttribute('height') || img.style.height
             const containerStyle = img.getAttribute('containerstyle') || ''
-
-            const align = deriveAlignFromContainerStyle(containerStyle)
+            const dataAlign = img.getAttribute('data-align')
+            const alignFromContainer = deriveAlignFromContainerStyle(containerStyle)
+            const alignFromData =
+                dataAlign === 'left' || dataAlign === 'center' || dataAlign === 'right'
+                    ? dataAlign
+                    : null
+            const align = alignFromContainer || alignFromData || 'left'
 
             const attrs: string[] = []
             attrs.push(`src="${src}"`)

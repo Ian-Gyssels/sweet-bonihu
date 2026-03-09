@@ -18,8 +18,9 @@ export const CustomImage = Image.extend({
     name: 'image',
 
     addAttributes() {
+        const parentAttrs = this.parent?.() ?? {}
         return {
-            ...this.parent?.(),
+            ...parentAttrs,
             'data-align': {
                 default: 'left',
                 parseHTML: (element) => element.getAttribute('data-align') || 'left',
@@ -39,6 +40,20 @@ export const CustomImage = Image.extend({
                     if (!attributes.style) return {}
                     return {style: attributes.style}
                 },
+            },
+            wrapperStyle: {
+                ...((parentAttrs as Record<string, unknown>).wrapperStyle as object | undefined) ?? {},
+                parseHTML: (element: HTMLElement) => {
+                    const align = element.getAttribute('data-align') || 'left'
+                    const justifyContent =
+                        align === 'left' ? 'flex-start' : align === 'right' ? 'flex-end' : 'center'
+                    return `display: flex; justify-content: ${justifyContent};`
+                },
+            },
+            containerStyle: {
+                ...((parentAttrs as Record<string, unknown>).containerStyle as object | undefined) ?? {},
+                renderHTML: (attributes: Record<string, unknown>) =>
+                    attributes.containerStyle ? { containerstyle: attributes.containerStyle } : {},
             },
         }
     },
